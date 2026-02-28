@@ -1,0 +1,75 @@
+{
+  "Pages": {
+    "Projects": {
+      "Filters": {
+        "projectStatus": "Proje Durumu",
+        "projectLocation": "Proje Lokasyonu",
+        "projectType": "Proje Tipi"
+      },
+      "Overview": {
+        "status": "Proje Durumu",
+        "type": "Konut Tipi",
+        "area": "Toplam Alan",
+        "commencementDate": "Başlangıç Tarihi",
+        "completionDate": "Teslim Tarihi",
+        "priceRange": "Fiyat Aralığı"
+      },
+      "Gallery": {
+        "heading": "Galeri"
+      },
+      "Location": {
+        "heading": "Konum",
+        "location": "Konum",
+        "address": "Adres",
+        "nearbyPlaces": "Yakın Yerler",
+        "viewOnMap": "Haritada Gör"
+      }
+    },
+    "News": {},
+    "Contact": {
+      "Offices": {
+        "heading": "Ofisler",
+        "summary": "Tüm ofislerimiz"
+      },
+      "Showrooms": {
+        "heading": "Showroomlar",
+        "summary": "En iyi showroomlarımız",
+        "buttonMap": "Haritada görmek için tıklayın"
+      },
+      "Form": {
+        "heading": "Bize Yazın",
+        "summary": "Aklınızdaki tüm soruları veya proje tekliflerinizi aşağıdaki form aracılığıyla bize iletebilirsiniz. Ekibimiz en kısa sürede sizinle iletişime geçerek detaylı bilgilendirme yapacaktır.",
+        "input_name_placeholder": "Adınız",
+        "input_surname_placeholder": "Soyadınız",
+        "input_phone_placeholder": "Telefon Numaranız",
+        "input_mail_placeholder": "E-posta Adresiniz",
+        "input_interest_placeholder": "İlgilendiğim Alan / Proje Tipi",
+        "input_message_placeholder": "Mesajınız",
+        "agreement": "Gizlilik politikasını kabul ediyorum",
+        "submit_label": "Gönder"
+      }
+    }
+  },
+  "Common": {
+    "Filters": {
+      "search": "Arama",
+      "clear": "Temizle",
+      "sorting": "Sıralama"
+    }
+  },
+  "Layout": {
+    "Subscribe": {
+      "heading": "ABONE OL",
+      "summary": "Bültenimize abone olun; özel teklifler, yeni ürünler ve daha fazlasından haberdar olun.",
+      "input_placeholder": "E-posta adresiniz",
+      "submit_label": "Abone Ol"
+    },
+    "Navbar": {
+      "menu": "Menü"
+    },
+    "Footer": {
+      "developedBy": "{name} tarafından geliştirildi",
+      "copyright": "© {year} {brand} - Tüm Hakları Saklıdır"
+    }
+  }
+}

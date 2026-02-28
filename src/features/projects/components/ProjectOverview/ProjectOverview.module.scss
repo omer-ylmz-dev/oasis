@@ -1,0 +1,73 @@
+@use "@/styles/_mixins" as *;
+
+.projectOverview {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-block: 2rem;
+    gap: 2rem;
+
+    .fact {
+        display: flex;
+        align-items: center;
+        column-gap: 0.7rem;
+
+        @include respond-down("sm") {
+            column-gap: 2rem;
+        }
+
+        .icon {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 100%;
+            background-color: black;
+
+            @include respond-down("sm") {
+                width: 4rem;
+                height: 4rem;
+            }
+        }
+
+        .description {
+            h5 {
+                font-weight: 600;
+            }
+
+            p {
+                font-weight: 300;
+                font-size: 0.8rem;
+            }
+
+            @include respond-down("sm") {
+                h5 {
+                    font-size: 0.9rem;
+                }
+
+                p {
+
+                    font-size: 0.9rem;
+                }
+            }
+        }
+
+
+    }
+
+    @include respond-down("xl") {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include respond-down("lg") {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include respond-down("md") {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-down("sm") {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

@@ -1,0 +1,132 @@
+@use "@/styles/_mixins" as *;
+
+.container {
+    margin-block: 5rem;
+
+
+
+    .header {
+
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5rem;
+
+        .filterWrapper,
+        .sorterWrapper {
+            display: flex;
+            gap: 0.7rem;
+        }
+
+        @include respond-down("lg") {
+
+            flex-direction: column-reverse;
+            row-gap: 1rem;
+
+
+        }
+
+
+        @include respond-down("sm") {
+
+            border: 1px solid lightgray;
+            border-radius: 1rem;
+            padding: 1.2rem;
+
+            .filterWrapper,
+            .sorterWrapper {
+                flex-direction: column;
+            }
+
+            .sorterWrapper {
+                margin-bottom: 2rem;
+            }
+
+        }
+
+
+
+
+    }
+
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+
+        @include respond-down("lg") {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include respond-down("sm") {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+    }
+}
+
+
+
+
+
+.pagination {
+    margin-block: 5rem;
+    display: flex;
+    justify-content: center;
+    column-gap: 1rem;
+
+    .pageNumbers {
+        display: flex;
+        justify-content: center;
+        column-gap: 1rem;
+    }
+
+    .pageNumber {
+        cursor: pointer;
+        padding: 1rem;
+        border: 1px solid lightgray;
+        border-radius: 0.5rem;
+        background: transparent;
+        transition: all 0.3s ease; 
+
+        &:hover {
+            background-color: black;
+            color: white;
+            border: 1px solid lightgray;
+        }
+    }
+
+    .active {
+        border: none;
+        background: black;
+        color: white;
+    }
+
+    .pageDirection {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        padding: 0.8rem;
+        border: 1px solid lightgray;
+        border-radius: 0.5rem;
+        background: transparent;
+        transition: all 0.3s ease; 
+
+        &:hover {
+            background-color: black;
+            color: white;
+            border: 1px solid lightgray;
+        }
+    }
+
+
+    @include respond-down("sm"){
+        .pageNumber{
+            padding: 0.6rem;
+        }
+        .pageDirection{
+            padding: 0.2rem;
+        }
+    }
+
+}

@@ -1,0 +1,75 @@
+{
+  "Pages": {
+    "Projects": {
+      "Filters": {
+        "projectStatus": "Статус проекта",
+        "projectLocation": "Расположение",
+        "projectType": "Тип проекта"
+      },
+      "Overview": {
+        "status": "Статус проекта",
+        "type": "Тип недвижимости",
+        "area": "Общая площадь",
+        "commencementDate": "Дата начала",
+        "completionDate": "Дата завершения",
+        "priceRange": "Диапазон цен"
+      },
+      "Gallery": {
+        "heading": "Галерея"
+      },
+      "Location": {
+        "heading": "Локация",
+        "location": "Локация",
+        "address": "Адрес",
+        "nearbyPlaces": "Рядом",
+        "viewOnMap": "На карте"
+      }
+    },
+    "News": {},
+    "Contact": {
+      "Offices": {
+        "heading": "Офисы",
+        "summary": "Все наши офисы"
+      },
+      "Showrooms": {
+        "heading": "Шоурумы",
+        "summary": "Наши лучшие шоурумы",
+        "buttonMap": "Нажмите, чтобы посмотреть на карте"
+      },
+      "Form": {
+        "heading": "Напишите нам",
+        "summary": "Вы можете отправить нам любые вопросы или предложения по проектам через форму ниже. Наша команда свяжется с вами в кратчайшие сроки для предоставления подробной информации.",
+        "input_name_placeholder": "Ваше имя",
+        "input_surname_placeholder": "Ваша фамилия",
+        "input_phone_placeholder": "Ваш номер телефона",
+        "input_mail_placeholder": "Ваш адрес электронной почты",
+        "input_interest_placeholder": "Меня интересует...",
+        "input_message_placeholder": "Ваше сообщение",
+        "agreement": "Я согласен с политикой конфиденциальности",
+        "submit_label": "Отправить"
+      }
+    }
+  },
+  "Common": {
+    "Filters": {
+      "search": "Поиск",
+      "clear": "Очистить",
+      "sorting": "Сортировка"
+    }
+  },
+  "Layout": {
+    "Subscribe": {
+      "heading": "ПОДПИСАТЬСЯ",
+      "summary": "Подпишитесь на нашу рассылку и получайте специальные предложения, информацию о новых запусках и т. д.",
+      "input_placeholder": "Ваш адрес электронной почты",
+      "submit_label": "Подписаться"
+    },
+    "Navbar": {
+      "menu": "Меню"
+    },
+    "Footer": {
+      "developedBy": "Разработано {name}",
+      "copyright": "© {year} {brand} - Все права защищены"
+    }
+  }
+}

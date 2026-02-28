@@ -1,0 +1,95 @@
+@use "@/styles/_mixins" as *;
+
+.container {
+    margin-block: 10rem;
+
+
+    .description {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 2rem;
+        flex-shrink: 0;
+        margin-bottom: 4rem;
+
+        p {
+            font-size: 0.8rem;
+            line-height: 1.6;
+        }
+
+        @include respond-down("md") {
+            font-size: 0.7rem;
+        }
+    }
+
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+
+       
+        @include respond-down("md") {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+    }
+
+}
+
+
+.card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+
+   
+    .imageContainer {
+        position: relative;
+        width: 100%;
+        max-width: 300px;
+        aspect-ratio: 1 / 1; 
+        overflow: hidden;
+    
+        @include respond-down("md") {
+          max-width: 100%;
+          aspect-ratio: 1 / 1;
+        }
+    
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+
+    .name {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        h1 {
+            font-size: 1rem;
+            font-weight: 400;
+                    
+        }
+
+        span {
+            font-size: 1rem;
+            font-weight: 200;
+        }
+
+
+        @include respond-down("md"){
+            h1, span{
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,60 @@
+@use "@/styles/_mixins" as *;
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.28);
+        transform: scale(1.1);
+    }
+}
+
+.modalContent {
+    background: #fff;
+    position: relative;
+    border-radius: 1rem;
+}
+
+
+.lightboxContent {
+    position: relative;
+    background: transparent;
+}
+
+.drawer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 400px;
+    background: #fff;
+
+    @include respond-down("sm") {
+        max-width: none;
+    }
+}

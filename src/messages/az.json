@@ -1,0 +1,75 @@
+{
+  "Pages": {
+    "Projects": {
+      "Filters": {
+        "projectStatus": "Layihə Statusu",
+        "projectLocation": "Layihə Məkanı",
+        "projectType": "Layihə Növü"
+      },
+      "Overview": {
+        "status": "Layihənin Statusu",
+        "type": "Mülkiyyət Növü",
+        "area": "Ümumi Sahə",
+        "commencementDate": "Başlanğıc Tarixi",
+        "completionDate": "Təhvil Tarixi",
+        "priceRange": "Qiymət Aralığı"
+      },
+      "Gallery": {
+        "heading": "Qalereya"
+      },
+      "Location": {
+        "heading": "Məkan",
+        "location": "Məkan",
+        "address": "Ünvan",
+        "nearbyPlaces": "Yaxınlıqdakı yerlər",
+        "viewOnMap": "Xəritədə bax"
+      }
+    },
+    "News": {},
+    "Contact": {
+      "Offices": {
+        "heading": "Ofislər",
+        "summary": "Bütün ofislərimiz"
+      },
+      "Showrooms": {
+        "heading": "Showroomlar",
+        "summary": "Ən yaxşı showroomlarımız",
+        "buttonMap": "Xəritədə görmək üçün klikləyin"
+      },
+      "Form": {
+        "heading": "Bizə Yazın",
+        "summary": "Ağlınızdakı bütün sualları və ya layihə təkliflərinizi aşağıdakı forma vasitəsilə bizə göndərə bilərsiniz. Komandamız ən qısa zamanda sizinlə əlaqə saxlayaraq ətraflı məlumat verəcəkdir.",
+        "input_name_placeholder": "Adınız",
+        "input_surname_placeholder": "Soyadınız",
+        "input_phone_placeholder": "Telefon Nömrəniz",
+        "input_mail_placeholder": "E-poçt Ünvanınız",
+        "input_interest_placeholder": "Maraqlandığım sahə / Layihə növü",
+        "input_message_placeholder": "Mesajınız",
+        "agreement": "Məxfilik siyasəti ilə razıyam",
+        "submit_label": "Göndər"
+      }
+    }
+  },
+  "Common": {
+    "Filters": {
+      "search": "Axtarış",
+      "clear": "Təmizlə",
+      "sorting": "Sıralama"
+    }
+  },
+  "Layout": {
+    "Subscribe": {
+      "heading": "ABUNƏ OL",
+      "summary": "Xəbərlərimizə abunə olun; xüsusi təkliflər, yeni məhsullar və s. haqqında məlumat alın.",
+      "input_placeholder": "E-poçt ünvanınız",
+      "submit_label": "Abunə Ol"
+    },
+    "Navbar": {
+      "menu": "Menyu"
+    },
+    "Footer": {
+      "developedBy": "{name} tərəfindən hazırlandı",
+      "copyright": "© {year} {brand} - Bütün hüquqlar qorunur"
+    }
+  }
+}

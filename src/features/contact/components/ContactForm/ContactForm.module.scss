@@ -1,0 +1,109 @@
+@use "@/styles/_mixins" as *;
+
+.container {
+    margin-block: 10rem;
+    border: 1px solid lightgray;
+    border-radius: 1rem;
+    padding: 4rem;
+
+
+
+    .description {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 2rem;
+        flex-shrink: 0;
+        margin-bottom: 4rem;
+
+        p {
+            font-size: 0.8rem;
+            line-height: 1.6;
+        }
+
+
+        @include respond-down("md") {
+            h1 {
+                font-size: 1.3rem;
+            }
+
+            p {
+                font-size: 0.7rem;
+            }
+        }
+    }
+
+    @include respond-down("lg") {
+        padding: 2rem;
+    }
+
+}
+
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+
+    .credentials {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding-inline: 3rem;
+        padding-bottom: 2rem;
+
+        @include respond-down("lg") {
+            padding-inline: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    .interests {
+        display: flex;
+        flex-direction: column;
+        row-gap: 3rem;
+
+        h4 {
+            text-align: center;
+
+            @include respond-down("lg") {
+                font-size: 0.7rem;
+            }
+
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            justify-items: center;
+            padding-inline: 2rem;
+
+            @include respond-down("xl") {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            @include respond-down("lg") {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 2rem;
+                padding-inline: 0;
+            }
+        }
+    }
+
+    .message {
+        width: 100%;
+    }
+
+    .agreement {
+        align-self: center;
+    }
+
+    .submitBtnWrapper {
+        padding-top: 2rem;
+        align-self: center;
+    }
+}

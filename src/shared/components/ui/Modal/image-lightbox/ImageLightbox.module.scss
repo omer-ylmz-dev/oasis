@@ -1,0 +1,56 @@
+@use "@/styles/_mixins" as *;
+
+.ImageLightbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 2rem; // Kenarlardaki boşluk */
+}
+
+.container {
+  position: relative;
+  display: inline-block; // İçeriğe (resme) göre daralması için
+  max-width: 90vw;
+  max-height: 90vh;
+  margin: auto;
+
+  .closeModalBtnWrapper {
+    position: absolute;
+    top: 5; 
+    right: 5;
+    cursor: pointer;
+    z-index: 9999;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+
+    @include respond-down("sm") {
+      top: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 50%;
+      padding: 5px;
+    }
+  }
+
+  .imageContainer {
+    position: relative;
+    width: auto;
+    height: auto;
+    
+    // Fill yerine resmin doğal oranını korumasını sağlayacağız
+    img {
+      position: relative !important; // Next.js 'fill' override
+      width: auto !important;
+      height: auto !important;
+      max-width: 90vw;
+      max-height: 85vh; // Kapat butonu vb. payı
+      object-fit: contain;
+      display: block;
+    }
+  }
+}

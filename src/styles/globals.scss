@@ -1,0 +1,39 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "reset" as *;
+
+
+
+
+
+html {
+    scroll-behavior: auto !important; 
+    overflow-x: hidden;
+}
+
+body {
+    min-height: 100dvh; 
+    display: flex;
+    flex-direction: column;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+main {
+    flex: 1 0 auto; 
+    outline: none;
+}
+
+div[id="main-section"]{
+    margin-inline: 6rem;
+
+    @include respond-down("md"){
+        margin-inline: 3rem;
+    }
+}
+
+
+:focus {
+    outline: none;
+    scroll-margin-top: 0 !important;
+}

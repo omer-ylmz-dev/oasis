@@ -1,0 +1,37 @@
+@use "@/styles/_mixins" as *;
+
+.selectWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.select {
+    padding-inline: 0.9rem;
+    padding-block: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #D9D9D9;
+    background-color: #fff;
+    font-family: inherit;
+    font-size: 0.7rem;
+    cursor: pointer;
+    color: #000;
+
+
+
+    &:focus {
+        outline: none;
+        border-color: #000;
+    }
+
+
+    &::-ms-expand {
+        display: block;
+    }
+}

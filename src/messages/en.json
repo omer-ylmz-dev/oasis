@@ -1,0 +1,75 @@
+{
+  "Pages": {
+    "Projects": {
+      "Filters": {
+        "projectStatus": "Project Status",
+        "projectLocation": "Project Location",
+        "projectType": "Project Type"
+      },
+      "Overview": {
+        "status": "Project Status",
+        "type": "Property Type",
+        "area": "Total Area",
+        "commencementDate": "Commencement Date",
+        "completionDate": "Completion Date",
+        "priceRange": "Price Range"
+      },
+      "Gallery": {
+        "heading": "Gallery"
+      },
+      "Location": {
+        "heading": "Location",
+        "location": "Location",
+        "address": "Address",
+        "nearbyPlaces": "Nearby Places",
+        "viewOnMap": "View on map"
+      }
+    },
+    "News": {},
+    "Contact": {
+      "Offices": {
+        "heading": "Offices",
+        "summary": "All our offices"
+      },
+      "Showrooms": {
+        "heading": "Showrooms",
+        "summary": "Our featured showrooms",
+        "buttonMap": "Click here to see on map"
+      },
+      "Form": {
+        "heading": "Contact Us",
+        "summary": "You can send us any questions or project proposals through the form below. Our team will get in touch with you as soon as possible to provide detailed information.",
+        "input_name_placeholder": "Your Name",
+        "input_surname_placeholder": "Your Surname",
+        "input_phone_placeholder": "Your Phone Number",
+        "input_mail_placeholder": "Your Email Address",
+        "input_interest_placeholder": "I am interested in...",
+        "input_message_placeholder": "Your Message",
+        "agreement": "I agree with the privacy policy",
+        "submit_label": "Submit"
+      }
+    }
+  },
+  "Common": {
+    "Filters": {
+      "search": "Search",
+      "clear": "Clear",
+      "sorting": "Sorting"
+    }
+  },
+  "Layout": {
+    "Subscribe": {
+      "heading": "SUBSCRIBE",
+      "summary": "Subscribe to our newsletter and receive special offers, new launches, etc.",
+      "input_placeholder": "Your email address",
+      "submit_label": "Subscribe"
+    },
+    "Navbar": {
+      "menu": "Menu"
+    },
+    "Footer": {
+      "developedBy": "Developed by {name}",
+      "copyright": "© {year} {brand} - All Rights Reserved"
+    }
+  }
+}

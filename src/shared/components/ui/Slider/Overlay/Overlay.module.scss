@@ -1,0 +1,69 @@
+@use "@/styles/_mixins" as *;
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    
+    pointer-events: none;
+}
+
+.hero{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+.gallery{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.content {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 0 20px;
+
+    .label{
+        user-select: none;
+        background: white;
+        padding-inline: 1rem;
+        padding-block: 0.2rem;
+        color: black;
+        border-radius: 0.5rem;
+    }
+
+    .title {
+        font-weight: 200;
+        margin: 0;
+        line-height: 1.2;
+        letter-spacing: -1px;
+        font-size: 4rem;
+
+        @include respond-down("md") {
+            font-size: 2.5rem;
+        }
+    }
+
+    .description {
+        margin-top: 1.5rem;
+        font-size: 0.9rem;
+        max-width: 600px;
+        opacity: 0.9;
+    }
+
+
+
+    &.heroVariant {
+        row-gap: 2rem;
+    }
+
+    &.breadcrumbVariant {
+        row-gap: 2rem;
+    }
+}

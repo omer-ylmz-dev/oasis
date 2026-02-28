@@ -1,0 +1,68 @@
+@use "@/styles/_mixins" as *;
+
+.primary {
+    cursor: pointer;
+    background-color: black;
+    border-radius: 0.5rem;
+    color: white;
+    font-weight: 100;
+    border: 1px solid black; 
+    outline: none;
+    padding-inline: 1.4rem;
+    padding-block: 0.5rem;
+    transition: all 0.3s ease; 
+
+    &:hover {
+        background-color: lightgray;
+        color: black;
+        border: 1px solid lightgray;
+    }
+}
+
+.outline {
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 0.5rem;
+    color: black;
+    border: 1px solid lightgray;
+    outline: none;
+    padding-inline: 1.4rem;
+    padding-block: 0.5rem;
+    transition: all 0.3s ease; 
+
+    &:hover {
+        background-color: black;
+        color: white;
+        border: 1px solid black;
+    }
+}
+
+.ghost{
+    background-color: transparent;
+    color: black;
+    border: none;
+    outline: none;
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+}
+
+
+.link{
+    width: fit-content;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: 200;
+}
+
+
+
+@include respond-down("sm") {
+    .primary, .outline{
+        white-space: nowrap;
+        padding-inline: 0.7rem;
+        font-size: 12px;
+    }
+}

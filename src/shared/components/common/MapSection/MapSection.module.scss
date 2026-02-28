@@ -1,0 +1,10 @@
+@use "@/styles/mixins" as *;
+
+.mapSection{
+    margin-block: 4rem;
+    height: 300px;
+
+    @include respond-down("sm"){
+        height: 600px;
+    }
+}
