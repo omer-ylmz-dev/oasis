@@ -22,7 +22,7 @@ export const ProjectAPI = {
             if (value && key !== 'page' && key !== 'limit') params.set(key, String(value));
         });
 
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/projects?${params.toString()}`);
+        const response = await fetch(`${process.env.API_URL}/projects?${params.toString()}`);
         return response.json();
     },
     async getBySlug(locale: string, project_slug: string) {
@@ -30,7 +30,7 @@ export const ProjectAPI = {
 
         params.set('locale', locale)
 
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/projects/${project_slug}?${params.toString()}`,
+        const response = await fetch(`${process.env.API_URL}/projects/${project_slug}?${params.toString()}`,
             {
                 headers: {
                     "Content-Type": "application/json"

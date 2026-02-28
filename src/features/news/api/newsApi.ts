@@ -13,7 +13,7 @@ export const NewsAPI = {
             if (value && key !== 'page' && key !== 'limit') params.set(key, String(value));
         });
 
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/news?${params.toString()}`, {
+        const response = await fetch(`${process.env.API_URL}/news?${params.toString()}`, {
             headers: { "Content-Type": "application/json" }
         });
 
@@ -26,7 +26,7 @@ export const NewsAPI = {
 
         params.set("locale", locale);
 
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/news/${news_slug}?${params.toString()}`,
+        const response = await fetch(`${process.env.API_URL}/news/${news_slug}?${params.toString()}`,
             {
                 headers: {
                     "Content-Type": "application/json"
