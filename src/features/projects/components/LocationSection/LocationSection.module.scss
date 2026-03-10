@@ -1,82 +1,61 @@
-@use "@/styles/mixins" as *;
+@use "@/styles/_mixins" as *;
+@use "@/styles/_variables" as *;
+@use "@/styles/_placeholders" as *;
+
 
 .locationSection {
-  margin-block: 4rem;
+  @include section-spacing(sm);
   padding: 2rem;
-  border: none;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  border-radius: 1rem;
+  @extend %section-box;
 
-  @include respond-down("sm") {
-    padding: 1rem;
-  }
+  @include respond-down("sm") { padding: 1rem; }
 
   .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
+      @include flex-between;
+      margin-bottom: 2rem;
 
-    @include respond-down("md") {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1.5rem;
-    }
+      @include respond-down("md") {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1.5rem;
+      }
   }
 
   .title {
-    font-size: 2.5rem;
-    font-weight: 700;
+      font-size: $font-size-3xl;
+      font-weight: $font-weight-bold;
 
-
-    @include respond-down("sm") {
-      font-size: 1.5rem;
-    }
+      @include respond-down("sm") { font-size: $font-size-xl; }
   }
 
   .tabs {
-    display: flex;
-    gap: 0.5rem;
-    background: #f5f5f5;
-    border-radius: 50px;
-    padding: 4px;
+      display: flex;
+      gap: 0.5rem;
+      background: #f5f5f5;
+      border-radius: 50px;
+      padding: 4px;
   }
 
   .tab {
-    padding: 0.6rem 1.8rem;
-    border: none;
-    background: transparent;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 0.95rem;
-    font-weight: 400;
-    color: black;
-    transition: all 0.3s ease;
-    white-space: nowrap;
+      padding: 0.6rem 1.8rem;
+      border: none;
+      background: transparent;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: $font-weight-regular;
+      color: $color-black;
+      transition: $transition-base;
+      white-space: nowrap;
 
-    &:hover {
-      color: #333;
-    }
+      &:hover { color: #333; }
+      &.active { background: $color-white; color: $color-black; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
 
-    &.active {
-      background: white;
-      color: #000;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    }
-
-    @include respond-down("sm") {
-      padding: 0.5rem 1.2rem;
-      font-size: 0.7rem;
-    }
+      @include respond-down("sm") { padding: 0.5rem 1.2rem; font-size: $font-size-xs; }
   }
 
-  .content {
-    width: 100%;
-  }
+  .content { width: 100%; }
 }
-
-
-
 
 
 
@@ -87,106 +66,59 @@
   display: grid;
   gap: 2rem;
 
-  .addressInfo {
-    padding: 1rem 0;
-  }
-
-  .addressLabel {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #333;
-  }
-
-  .addressText {
-    font-size: 1rem;
-    color: #666;
-    line-height: 1.6;
-  }
+  .addressInfo  { padding: 1rem 0; }
+  .addressLabel { font-size: 1.1rem; font-weight: $font-weight-semibold; margin-bottom: 0.5rem; color: #333; }
+  .addressText  { font-size: $font-size-md; color: $color-text-muted; line-height: $line-height-body; }
 }
-
-
-
-
-
-
-
 
 .nearbyPlaces {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 2rem;
 
-  @include respond-down("md") {
-    grid-template-columns: 1fr;
+  @include respond-down("md") { grid-template-columns: 1fr; }
+
+  .placesList { display: flex; flex-direction: column; gap: 1.5rem; }
+  .listTitle  {
+      font-size: 1.1rem;
+      font-weight: $font-weight-light;
+      color: #333;
+      margin-bottom: 0.5rem;
+
+      @include respond-down("sm") { font-size: $font-size-xs; }
   }
 
-  .placesList {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .listTitle {
-    font-size: 1.1rem;
-    font-weight: 300;
-    color: #333;
-    margin-bottom: 0.5rem;
-
-    @include respond-down("sm") {
-      font-size: 0.7rem;
-    }
-  }
-
-  .places {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
+  .places { display: flex; flex-direction: column; gap: 1rem; }
 
   .placeItem {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background: #f9f9f9;
-    border-radius: 8px;
-    transition: all 0.2s ease;
-    cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background: #f9f9f9;
+      border-radius: 8px;
+      transition: $transition-fast;
+      cursor: pointer;
 
-    &:hover {
-      background: #f0f0f0;
-      transform: translateX(4px);
-    }
+      &:hover { background: #f0f0f0; transform: translateX(4px); }
   }
 
-  .placeInfo {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-  }
-
-  .placeIcon {
-    font-size: 1.2rem;
-  }
+  .placeInfo { display: flex; align-items: center; gap: 0.8rem; }
+  .placeIcon { font-size: 1.2rem; }
 
   .placeName {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: black;
+      font-size: 0.95rem;
+      font-weight: $font-weight-medium;
+      color: $color-black;
 
-    @include respond-down("sm") {
-      font-size: 0.7rem;
-    }
+      @include respond-down("sm") { font-size: $font-size-xs; }
   }
 
   .placeDistance {
-    font-size: 0.9rem;
-    color: #666;
-    font-weight: 500;
+      font-size: $font-size-base;
+      color: $color-text-muted;
+      font-weight: $font-weight-medium;
 
-    @include respond-down("sm") {
-      font-size: 0.7rem;
-    }
+      @include respond-down("sm") { font-size: $font-size-xs; }
   }
 }

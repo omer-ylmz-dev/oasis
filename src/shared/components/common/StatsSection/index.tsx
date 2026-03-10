@@ -1,4 +1,4 @@
-import { StatItem } from "@/config/home.config";
+import { StatItem } from "@/shared/types/content.types";
 import StatCard from "./StatCard";
 import styles from "./StatsSection.module.scss"
 import { useLocale } from "next-intl";

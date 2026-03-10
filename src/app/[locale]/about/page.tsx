@@ -1,4 +1,4 @@
-import AboutPage from '@/features/about/AboutPage'
+import AboutPage from '@/features/about/components/AboutPage'
 import JsonLd from '@/shared/components/layout/JsonLD'
 import { getPageMetadata } from '@/shared/utils/metadata';
 import { createOrganizationSchema } from '@/shared/utils/schema'

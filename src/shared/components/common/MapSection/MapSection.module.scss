@@ -1,10 +1,11 @@
-@use "@/styles/mixins" as *;
+@use "@/styles/_mixins" as *;
+@use "@/styles/_variables" as *;
+@use "@/styles/_placeholders" as *;
 
-.mapSection{
-    margin-block: 4rem;
+
+.mapSection {
+    @include section-spacing(sm);
     height: 300px;
 
-    @include respond-down("sm"){
-        height: 600px;
-    }
+    @include respond-down("sm") { height: 600px; }
 }

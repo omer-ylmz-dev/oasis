@@ -1,35 +1,32 @@
 @use "@/styles/_mixins" as *;
+@use "@/styles/_variables" as *;
+
+
 
 .infoSection {
     display: flex;
-    flex-direction: column; 
-    gap: 4rem; 
-    align-items: flex-start; 
-    margin-block: 10rem;
-  
+    flex-direction: column;
+    gap: 4rem;
+    align-items: flex-start;
+    @include section-spacing;
+
     @media (min-width: 992px) {
-        flex-direction: row; 
+        flex-direction: row;
         justify-content: space-between;
-        align-items: flex-start; 
+        align-items: flex-start;
 
-        &.reverse {
-            flex-direction: row-reverse;
-        }
+        &.reverse { flex-direction: row-reverse; }
     }
 
-
-    @include respond-down("lg"){
-        flex-direction: column-reverse;
-    }
+    @include respond-down("lg") { flex-direction: column-reverse; }
 
     .textContent {
         flex: 1;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start; 
-        align-self: stretch;        
+        justify-content: flex-start;
+        align-self: stretch;
         row-gap: 1.5rem;
-        
 
         .titleGroup {
             display: flex;
@@ -37,59 +34,31 @@
             row-gap: 0.5rem;
             flex-shrink: 0;
 
-            @include respond-down("xl"){
-                h1{
-                    font-size: 1.5rem;
-                }
-
-            }
-        }
-    
-        p {
-            font-size: 0.8rem;
-            margin: 0;      
-            flex-grow: 0; 
-            line-height: 1.6;
+            @include respond-down("xl") { h1 { font-size: $font-size-xl; } }
         }
 
+        p { @include body-text; margin: 0; flex-grow: 0; }
 
-        @include respond-down("xl"){
-            p{
-                font-size: 0.7rem;
-            }
-        }
-
-
-        
+        @include respond-down("xl") { p { font-size: $font-size-xs; } }
     }
-  
+
     .imageContainer {
         position: relative;
         width: 100%;
         max-width: 500px;
-        aspect-ratio: 1.5; 
-        flex-shrink: 0; 
-        
-        background-color: #f0f0f0; 
-        border-radius: 12px;
+        aspect-ratio: 1.5;
+        flex-shrink: 0;
+        background-color: #f0f0f0;
+        border-radius: $radius-card;
         overflow: hidden;
-        
+
         img {
             object-fit: cover;
-            transition: transform 0.3s ease; 
-            
-            &:hover {
-                transform: scale(1.03); 
-            }
+            transition: $transition-base;
+            &:hover { transform: scale(1.03); }
         }
 
-        @include respond-down("xl"){
-            max-width: 400px;
-        }
-
-        @include respond-down("lg"){
-            max-width: none;
-        }
-
+        @include respond-down("xl") { max-width: 400px; }
+        @include respond-down("lg") { max-width: none; }
     }
 }

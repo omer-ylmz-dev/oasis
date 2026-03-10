@@ -17,44 +17,46 @@ interface HeroProps {
 
 
 export default function HeroSection({ locale }: HeroProps) {
-
+  const isError = useBreadcrumbStore(state => state.isError)
   const pathname = usePathname();
   const dynamicHeroData = useBreadcrumbStore(state => state.heroData);
 
-  
+
   const staticHeroData = useMemo(
     () => resolveHeroFromUrl(pathname, locale),
     [pathname, locale]
   );
-  
-  
+
+
+  if (isError) return null
+
+
   const heroData: HeroData | null = dynamicHeroData || staticHeroData;
 
-  const isHome = heroData?.isHome || false;
 
-  if (!heroData) {
-    return null; 
+  if (!heroData) return null;
+
+  if (heroData.isHome) {
+    return (
+      <header className={styles.hero}>
+        <Slider.hero locale={locale} data={HOME_SLIDER_DATA} autoplay={true} />
+      </header>
+    );
   }
 
   const { title, image, showBreadcrumb, breadcrumbs, date } = heroData;
 
-  
+
   return (
     <header className={styles.hero}>
-      {isHome ? (
-        <Slider.hero locale={locale} data={HOME_SLIDER_DATA} autoplay={true} />
-      ) : (
-        <>
-          <Image src={image} alt={title} fill priority className={styles.bgImage} />
-          <Overlay.breadcrumb
-            title={title}
-            locale={locale}
-            showBreadcrumb={showBreadcrumb}
-            breadcrumbs={breadcrumbs}
-            date={date}
-          />
-        </>
-      )}
+      <Image src={image} alt={title} fill priority className={styles.bgImage} />
+      <Overlay.breadcrumb
+        title={title}
+        locale={locale}
+        showBreadcrumb={showBreadcrumb}
+        breadcrumbs={breadcrumbs}
+        date={date}
+      />
     </header>
   );
 }

@@ -9,8 +9,6 @@ export const getInfoTextVariants = (isRtl: boolean): Variants => ({
     opacity: 1, 
     x: 0,
     transition: { 
-     /*  duration: 0.8, // Biraz daha oturaklı bir giriş için süreyi hafif artırdım
-      ease: [0.22, 1, 0.36, 1] // Quint Out ease: Daha profesyonel bir duruş sağlar */
       duration: 0.6, 
       ease: 'easeOut'
     } 

@@ -1,69 +1,58 @@
 @use "@/styles/_mixins" as *;
+@use "@/styles/_variables" as *;
+
+
+
 
 .overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    
+    @include absolute-fill;
+    z-index: $z-overlay;
     pointer-events: none;
 }
 
-.hero{
-    background-color: rgba(0, 0, 0, 0.6);
-}
+.hero    { background-color: $overlay-hero; }
+.gallery { background-color: $overlay-gallery; }
 
 
-.gallery{
-    background-color: rgba(0, 0, 0, 0.2);
-}
+
 
 .content {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
+    @include absolute-fill;
+    z-index: $z-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #ffffff;
+    color: $color-white;
     padding: 0 20px;
 
-    .label{
+    .label {
         user-select: none;
-        background: white;
+        background: $color-white;
         padding-inline: 1rem;
         padding-block: 0.2rem;
-        color: black;
-        border-radius: 0.5rem;
+        color: $color-black;
+        border-radius: $radius-sm;
     }
 
     .title {
-        font-weight: 200;
+        font-weight: $font-weight-light;
         margin: 0;
         line-height: 1.2;
         letter-spacing: -1px;
         font-size: 4rem;
 
-        @include respond-down("md") {
-            font-size: 2.5rem;
-        }
+        @include respond-down("md") { font-size: 2.5rem; }
     }
 
     .description {
         margin-top: 1.5rem;
-        font-size: 0.9rem;
+        font-size: $font-size-base;
         max-width: 600px;
         opacity: 0.9;
     }
 
-
-
-    &.heroVariant {
-        row-gap: 2rem;
-    }
-
-    &.breadcrumbVariant {
-        row-gap: 2rem;
-    }
+    &.heroVariant      { row-gap: 2rem; }
+    &.breadcrumbVariant { row-gap: 2rem; }
 }

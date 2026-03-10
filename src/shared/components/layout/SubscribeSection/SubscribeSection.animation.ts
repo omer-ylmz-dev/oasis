@@ -1,11 +1,14 @@
 import { Variants } from 'framer-motion';
 
+
+
 export const subscribeViewportConfig = {
   once: true,
   amount: 0.2
 };
 
-// Parent Konteyner: Çocukları sırayla tetikler
+
+
 export const subscribeContainerVariants: Variants = {
   initial: { 
     opacity: 0, 
@@ -17,13 +20,15 @@ export const subscribeContainerVariants: Variants = {
     transition: { 
       duration: 0.8, 
       ease: [0.16, 1, 0.3, 1],
-      staggerChildren: 0.15, // Çocukların (h1, p, form) arasındaki gecikme
-      delayChildren: 0.1     // İlk çocuğun başlamadan önceki beklemesi
+      staggerChildren: 0.15, 
+      delayChildren: 0.1     
     } 
   }
 };
 
-// Çocuk Öğeler (H1, P, Form): Ortak animasyon yapısı
+
+
+
 export const subscribeItemVariants: Variants = {
   initial: { 
     opacity: 0, 

@@ -25,9 +25,6 @@ export interface ShowroomProps {
 }
 
 
-/* export type ShowroomItem = {
-    title: Record<Languages, string>;
-}; */
 
 
 export interface ShowroomItem {
@@ -39,11 +36,6 @@ export interface ShowroomItem {
 }
 
 
-/* export type OfficeItem = {
-    title: Record<Languages, string>;
-    address: Record<Languages, string>;
-    phone: string;
-}; */
 
 
 
@@ -73,16 +65,26 @@ export type LocationsSectionProps =
     };
 
 
+
+
+
 export interface ContactFormField {
     name: string;
     type?: string;
     translationKey: string;
 }
 
+
+
+
 export interface ProjectItem {
     id: string;
     label: Record<Languages, string>;
 }
+
+
+
+
 
 export interface ContactFormConfig {
     credentials: ContactFormField[];

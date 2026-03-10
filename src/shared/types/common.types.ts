@@ -32,8 +32,6 @@ export interface SliderDataItem {
 
 
 
-
-
 export type ModalType = 'MOBILE_MENU' | 'IMAGE_VIEWER' | 'LIGHTBOX_SLIDER';
 
 export interface ModalProps {

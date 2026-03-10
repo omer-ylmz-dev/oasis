@@ -29,29 +29,6 @@ export const SHOWROOMS: ShowroomItem[] = [
 ];
 
 
-/* export const OFFICES: OfficeItem[] = [
-  {
-    title: { az: "First Office", tr: "Birinci Ofis", en: "First Office", ru: "Первый офис" },
-    address: {
-      az: "1940 El Cajon Blvd, San Diego, CA 92104",
-      tr: "1940 El Cajon Blvd, San Diego, CA 92104",
-      en: "1940 El Cajon Blvd, San Diego, CA 92104",
-      ru: "1940 El Cajon Blvd, Сан-Диего, Калифорния 92104"
-    },
-    phone: "+1 555 123-45-67"
-  },
-  {
-    title: { az: "Second Office", tr: "İkinci Ofis", en: "Second Office", ru: "Второй офис" },
-    address: {
-      az: "742 Evergreen Terrace, Springfield",
-      tr: "742 Evergreen Terrace, Springfield",
-      en: "742 Evergreen Terrace, Springfield",
-      ru: "742 Эвергрин Террас, Спрингфилд"
-    },
-    phone: "+1 555 987-65-43"
-  }
-]; */
-
 
 
 export const OFFICES: OfficeItem[] = [

@@ -5,7 +5,7 @@ export const footerViewportConfig = {
   amount: 0.1
 };
 
-// Ana Footer konteyneri (Aşağıdan yukarı yumuşak giriş)
+
 export const footerContainerVariants: Variants = {
   initial: { opacity: 0, y: 50 },
   whileInView: { 
@@ -15,7 +15,7 @@ export const footerContainerVariants: Variants = {
   }
 };
 
-// Marka/Logo alanı (Sadece fade-in)
+
 export const footerBrandVariants: Variants = {
   initial: { opacity: 0 },
   whileInView: { 
@@ -24,7 +24,7 @@ export const footerBrandVariants: Variants = {
   }
 };
 
-// Navigasyon linkleri için (Soldan sağa staggered)
+
 export const getFooterNavLinkVariants = (index: number): Variants => ({
   initial: { opacity: 0, x: -15 },
   whileInView: { 
@@ -38,7 +38,7 @@ export const getFooterNavLinkVariants = (index: number): Variants => ({
   }
 });
 
-// Alt kısımdaki metinler ve sosyal medya (Gecikmeli fade-in)
+
 export const footerBottomVariants = (delay: number): Variants => ({
   initial: { opacity: 0 },
   whileInView: { 

@@ -1,159 +1,48 @@
-.projectCard {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1rem;
-    text-decoration: none;
-    color: black;
-
-    .imageContainer {
-        position: relative;
-        width: 100%;
-        aspect-ratio: 1.5;
-        flex-shrink: 0;
-        border-radius: 12px;
-        overflow: hidden;
-
-        img {
-            object-fit: cover;
-            transition: transform 0.3s ease;
-
-            &:hover {
-                transform: scale(1.03);
-            }
-        }
+@use "@/styles/_mixins" as *;
+@use "@/styles/_variables" as *;
+@use "@/styles/_placeholders" as *;
 
 
-        .overlay {
-            position: absolute;
-            inset: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            gap: 8px;
-            padding: 16px;
-
-            h1 {
-                color: white;
-                font-size: 1rem;
-                font-weight: 400;
-            }
 
 
-            .statusLabel {
-                background-color: #2C2C2C;
-                border-radius: 0.5rem;
-                color: white;
-                font-size: 0.8rem;
-                font-weight: 400;
-                border: none;
-                outline: none;
-                padding: 0.5rem;
-            }
-        }
 
-        &:hover {
-            img {
-                transform: scale(1.05);
-            }
+%listing-image-container {
+    @extend %image-container;
 
-            .overlay {
-                opacity: 1;
-            }
-        }
+    img {
+        object-fit: cover;
+        transition: $transition-base;
     }
 
-
-    .description {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        row-gap: 0.5rem;
+    .overlay {
+        @extend %card-overlay;
 
         h1 {
-            font-size: 1.2rem;
+            color: $color-white;
+            font-size: $font-size-md;
+            font-weight: $font-weight-regular;
         }
 
-        p {
-            font-size: 0.9rem;
-        }
+        .statusLabel { @extend %status-label; }
+    }
 
-
+    &:hover {
+        img { transform: scale(1.05); }
+        .overlay { opacity: 1; }
     }
 }
 
 
 
 
-.newsCard {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1rem;
-    text-decoration: none;
-    color: black;
-
-    .imageContainer {
-        position: relative;
-        width: 100%;
-        aspect-ratio: 1.5;
-        flex-shrink: 0;
-        border-radius: 12px;
-        overflow: hidden;
-
-        img {
-            object-fit: cover;
-            transition: transform 0.3s ease;
-
-            &:hover {
-                transform: scale(1.03);
-            }
-        }
 
 
-        .overlay {
-            position: absolute;
-            inset: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            gap: 8px;
-            padding: 16px;
-
-            h1 {
-                color: white;
-                font-size: 1rem;
-                font-weight: 400;
-            }
 
 
-            .statusLabel {
-                background-color: #2C2C2C;
-                border-radius: 0.5rem;
-                color: white;
-                font-size: 0.8rem;
-                font-weight: 400;
-                border: none;
-                outline: none;
-                padding: 0.5rem;
-            }
-        }
+.projectCard {
+    @extend %card-link-base;
 
-        &:hover {
-            img {
-                transform: scale(1.05);
-            }
-
-            .overlay {
-                opacity: 1;
-            }
-        }
-    }
-
+    .imageContainer { @extend %listing-image-container; }
 
     .description {
         display: flex;
@@ -161,10 +50,28 @@
         align-items: center;
         row-gap: 0.5rem;
 
-        h3 {
-            text-align: center;
-        }
+        h1 { font-size: $font-size-lg; }
+        p  { font-size: $font-size-base; }
+    }
+}
 
 
+
+
+
+
+
+.newsCard {
+    @extend %card-link-base;
+
+    .imageContainer { @extend %listing-image-container; }
+
+    .description {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 0.5rem;
+
+        h3 { text-align: center; }
     }
 }

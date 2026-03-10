@@ -1,79 +1,57 @@
 @use "@/styles/_mixins" as *;
+@use "@/styles/_variables" as *;
+
+
 
 .defaultContent {
-  margin-block: 10rem;
+  @include section-spacing;
 
   .title {
-    font-size: 2rem;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color: #1a1a1a;
+      font-size: $font-size-2xl;
+      font-weight: $font-weight-semibold;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: $color-text-primary;
   }
 
-
-
   .content {
-    margin-top: 3rem;
-    font-size: 0.7rem;
-    line-height: 1.8;
-    color: black;
+      margin-top: 3rem;
+      font-size: $font-size-xs;
+      line-height: 1.8;
+      color: $color-black;
 
-    p {
-      margin-bottom: 1.5rem;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
+      p { margin-bottom: 1.5rem; &:last-child { margin-bottom: 0; } }
   }
 }
 
 
 
 
-
-
 .quoteContent {
-  margin-block: 10rem;
+  @include section-spacing;
   text-align: center;
 
-  .quote {
-    position: relative;
-    margin: 0;
-    padding: 0;
-  }
-
+  .quote    { position: relative; margin: 0; padding: 0; }
   .quoteText {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 300;
-    line-height: 1.6;
-    color: #2a2a2a;
-    margin-bottom: 1.5rem;
+      text-align: center;
+      font-size: $font-size-2xl;
+      font-weight: $font-weight-light;
+      line-height: 1.6;
+      color: $color-text-secondary;
+      margin-bottom: 1.5rem;
 
-    @include respond-down("lg") {
-      font-size: 1.5rem;
-    }
-
+      @include respond-down("lg") { font-size: $font-size-xl; }
   }
 
   .author {
-    font-size: 1rem;
-    font-weight: 600;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
+      font-size: $font-size-md;
+      font-weight: $font-weight-semibold;
+      color: $color-black;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
 
-    cite {
-      font-style: normal;
-    }
-
-    .role {
-      font-size: 0.875rem;
-      font-weight: 400;
-      color: #9a9a9a;
-    }
+      cite { font-style: normal; }
+      .role { font-size: 0.875rem; font-weight: $font-weight-regular; color: $color-gray-muted; }
   }
 }

@@ -1,7 +1,7 @@
 import { BsInstagram, BsFacebook, BsYoutube, BsTwitterX } from "react-icons/bs";
 
 
-const BASE_PAGES = {
+export const BASE_PAGES = {
   projects: {
     href: 'projects',
     image: 'https://images.unsplash.com/photo-1542621334-a254cf47733d?w=1920&h=1080',
@@ -46,6 +46,14 @@ const BASE_PAGES = {
 };
 
 
+export const HOME_PAGE = {
+  href: '',
+  ogImage: '/og/home.jpg',   
+  label: { az: 'Ana səhifə', tr: 'Ana sayfa', en: 'Home', ru: 'Главная' }
+}
+
+
+
 export const NAVBAR_LINKS = [
   BASE_PAGES.projects,
   BASE_PAGES.news,
@@ -61,22 +69,9 @@ export const FOOTER_LINKS = [
 ];
 
 
+export const ALL_PAGES = Object.values(BASE_PAGES).map(page => page.href)
 
-export const HOME_HERO = {
-  image: '/home.jpg',
-  title: {
-    az: 'ICONIC DESIGN, INSPIRING AMENITIES',
-    tr: 'İKONİK TASARIM, İLHAM VEREN OLANAKLAR',
-    en: 'ICONIC DESIGN, INSPIRING AMENITIES',
-    ru: 'ИКОНИЧЕСКИЙ ДИZАЙН'
-  },
-  description: {
-    az: 'Lorem ipsum dolor sit amet...',
-    tr: 'Lorem ipsum dolor sit amet...',
-    en: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a mi ac elit efficitur pharetra.',
-    ru: 'Lorem ipsum dolor sit amet...'
-  }
-};
+
 
 export const HIDE_HERO_PATHS = ['account', 'login', 'register'];
 

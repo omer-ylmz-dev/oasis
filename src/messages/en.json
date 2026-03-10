@@ -70,6 +70,17 @@
     "Footer": {
       "developedBy": "Developed by {name}",
       "copyright": "© {year} {brand} - All Rights Reserved"
+    },
+    "NotFound": {
+      "title": "404",
+      "description": "Page Not Found",
+      "linkText": "Go To Homepage"
+    },
+    "Error": {
+      "title": "An Error Occurred",
+      "description": "Oops! Something went wrong.",
+      "retryText": "Try Again",
+      "linkText": "Go To Homepage"
     }
   }
 }

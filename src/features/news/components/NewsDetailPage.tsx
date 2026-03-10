@@ -6,7 +6,7 @@ import Slider from "@/shared/components/ui/Slider";
 import { useBreadcrumb } from "@/shared/hooks/useBreadcrumb";
 import { useLocale } from "next-intl";
 import { useMemo } from "react";
-import { NewsDetailData } from "./types/news.types";
+import { NewsDetailData } from "../types/news.types";
 
 
 export default function NewsDetailPage({ newsDetail }: { newsDetail: NewsDetailData }) {

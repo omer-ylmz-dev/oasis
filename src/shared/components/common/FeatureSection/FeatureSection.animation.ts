@@ -5,7 +5,7 @@ export const featureViewportConfig = {
   amount: 0.3
 };
 
-// Başlık ve Açıklama için (Soldan içeri kayma)
+
 export const featureHeaderVariants = (delay: number = 0): Variants => ({
   initial: { opacity: 0, x: -40 },
   whileInView: { 
@@ -19,7 +19,7 @@ export const featureHeaderVariants = (delay: number = 0): Variants => ({
   }
 });
 
-// Feature Kartları için (Sıralı belirme)
+
 export const featureCardVariants = (index: number): Variants => ({
   initial: { opacity: 0 },
   whileInView: { 

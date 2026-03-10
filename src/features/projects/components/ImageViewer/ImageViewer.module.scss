@@ -1,96 +1,83 @@
 @use "@/styles/_mixins" as *;
+@use "@/styles/_variables" as *;
+@use "@/styles/_placeholders" as *;
+
 
 .imageViewer {
   width: 100%;
   padding: 2rem;
-  border: none;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  border-radius: 1rem;
+  @extend %section-box;
 
-  @include respond-down("sm") {
-    padding: 0.7rem;
-  }
+  @include respond-down("sm") { padding: 0.7rem; }
 }
+
+
+
 
 .header {
   padding: 0.4rem 0.2rem;
-
-  @include respond-down("md") {
-    padding: 0 0 1.5rem 0;
-  }
+  @include respond-down("md") { padding: 0 0 1.5rem 0; }
 }
+
+
+
 
 .title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #1a1a1a;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
   margin: 0;
 
-  @include respond-down("md") {
-    font-size: 2rem;
-  }
-
-  @include respond-down("sm") {
-    font-size: 1.5rem;
-  }
+  @include respond-down("md") { font-size: $font-size-2xl; }
+  @include respond-down("sm") { font-size: $font-size-xl; }
 }
+
+
+
 
 .carouselContainer {
   position: relative;
   width: 100%;
   margin-top: 3rem;
 
-  @include respond-down("sm") {
-    margin-top: 0;
-  }
+  @include respond-down("sm") { margin-top: 0; }
 }
+
+
+
 
 .embla {
   overflow: hidden;
   width: 100%;
-}
 
-.emblaContainer {
-  display: flex;
-  gap: 2rem;
-  padding: 0 2rem;
+  &Container {
+      display: flex;
+      gap: 2rem;
+      padding: 0 2rem;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
 
-  @include respond-down("md") {
-    gap: 1rem;
-    padding: 0;
+      @include respond-down("md") { gap: 1rem; padding: 0; }
+  }
+
+  &Slide {
+      flex: 0 0 auto;
+      min-width: 0;
+      position: relative;
+      width: 50%;
+      max-width: 600px;
+
+      @include respond-down("md") { width: 100%; }
   }
 }
 
-.emblaSlide {
-  flex: 0 0 auto;
-  min-width: 0;
-  position: relative;
-  width: 50%;
-  max-width: 600px;
 
-  @include respond-down("md") {
-    width: 100%;
-  }
-}
 
-.imageCard {
-  position: relative;
-  width: 100%;
-  border-radius: 1rem;
-  overflow: hidden;
-}
 
-.imageWrapper {
-  position: relative;
-  width: 100%;
-  padding-bottom: 66.67%;
-  background-color: #d0d0d0;
-}
+.imageCard   { position: relative; width: 100%; border-radius: $radius-md; overflow: hidden; }
+.imageWrapper { position: relative; width: 100%; padding-bottom: 66.67%; background-color: #d0d0d0; }
+.image       { object-fit: cover; border-radius: $radius-md; }
 
-.image {
-  object-fit: cover;
-  border-radius: 1rem;
-}
 
 
 .dots {
@@ -102,26 +89,17 @@
   padding: 0 2rem;
 }
 
+
+
 .dot {
   width: 8px;
   height: 8px;
-  border-radius: 50%;
+  border-radius: $radius-full;
   background-color: #d0d0d0;
   border: none;
   padding: 0;
   cursor: pointer;
-  transition: all 0.3s ease;
-}
+  transition: $transition-base;
 
-
-
-.emblaContainer {
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-}
-
-
-.dot:focus-visible {
-  outline: 2px solid #1a1a1a;
-  outline-offset: 2px;
+  &:focus-visible { outline: 2px solid $color-text-primary; outline-offset: 2px; }
 }

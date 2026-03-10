@@ -1,10 +1,19 @@
-export const SITE_CONFIG = {
+export interface SiteConfig {
+  brand: string;
+  developer: {
+    name: string;
+    link: string;
+  }
+  currentYear: number;
+}
+
+
+export const SITE_CONFIG: SiteConfig = {
   brand: "OASIS",
   developer: {
     name: "omer-ylmz-dev",
-    link: "/"
+    link: "https://github.com/omer-ylmz-dev"
   },
   currentYear: new Date().getFullYear()
 };
 
-// UYARI : HER BİR VERİNİN TYPE'I OLACAK

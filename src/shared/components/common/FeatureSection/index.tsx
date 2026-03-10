@@ -1,10 +1,11 @@
 import styles from "./FeatureSection.module.scss"
 import FeatureCard from './FeatureCard';
 import { useLocale } from "next-intl";
-import { FeatureSectionData } from "@/config/home.config";
+import { FeatureSectionData } from "@/features/home/types";
 import { motion } from "framer-motion";
 import { featureHeaderVariants, featureViewportConfig } from "./FeatureSection.animation";
 import { Locale, LocalizedString } from "@/shared/types/common.types";
+
 
 interface FeatureSectionProps {
     features: FeatureSectionData;

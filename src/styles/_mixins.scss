@@ -1,39 +1,217 @@
 @use "sass:map";
+@use "@/styles/_variables" as *;
+
+// ── Breakpoints ──────────────────────────────────────────────
 
 $breakpoints: (
-    "sm": 640px,
-    "md": 768px,
-    "lg": 1024px,
-    "xl": 1280px,
+    "sm":  640px,
+    "md":  768px,
+    "lg":  1024px,
+    "xl":  1280px,
     "2xl": 1536px
 );
 
 @mixin respond-to($size) {
     @if map.has-key($breakpoints, $size) {
-        @media (min-width: map.get($breakpoints, $size)) {
-            @content;
-        }
-    }
-
-    @else {
-        @media (min-width: $size) {
-            @content;
-        }
+        @media (min-width: map.get($breakpoints, $size)) { @content; }
+    } @else {
+        @media (min-width: $size) { @content; }
     }
 }
 
-
 @mixin respond-down($size) {
     @if map.has-key($breakpoints, $size) {
+        @media (max-width: map.get($breakpoints, $size)) { @content; }
+    } @else {
+        @media (max-width: $size) { @content; }
+    }
+}
 
-        @media (max-width: map.get($breakpoints, $size)) {
-            @content;
-        }
+// ── Layout ───────────────────────────────────────────────────
+
+
+@mixin flex-column-center($gap: 2rem) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: $gap;
+}
+
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+@mixin absolute-fill {
+    position: absolute;
+    inset: 0;
+}
+
+// ── Section Spacing ──────────────────────────────────────────
+
+
+@mixin section-spacing($size: default) {
+    @if $size == sm {
+        margin-block: $section-margin-sm;
+    } @else if $size == md {
+        margin-block: $section-margin-md;
+    } @else {
+        margin-block: $section-margin;
+    }
+}
+
+// ── Typography ───────────────────────────────────────────────
+
+
+@mixin body-text($size: $font-size-sm) {
+    font-size: $size;
+    line-height: $line-height-body;
+}
+
+// ── Cards / Images ───────────────────────────────────────────
+
+
+@mixin image-container($ratio: 1.5) {
+    position: relative;
+    width: 100%;
+    aspect-ratio: $ratio;
+    flex-shrink: 0;
+    border-radius: $radius-card;
+    overflow: hidden;
+}
+
+
+@mixin image-hover-scale($scale: 1.03) {
+    img {
+        object-fit: cover;
+        transition: $transition-base;
+        &:hover { transform: scale($scale); }
+    }
+    &:hover img { transform: scale($scale + 0.02); }
+}
+
+
+@mixin card-overlay($bg: $overlay-dark, $direction: column, $justify: flex-start, $align: flex-start) {
+    @include absolute-fill;
+    background-color: $bg;
+    z-index: $z-content;
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: 8px;
+    padding: 16px;
+}
+
+// ── Grid ─────────────────────────────────────────────────────
+
+
+@mixin responsive-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+
+    @include respond-down("xl") { grid-template-columns: repeat(3, 1fr); }
+    @include respond-down("lg") { grid-template-columns: repeat(2, 1fr); }
+    @include respond-down("sm") { grid-template-columns: repeat(1, 1fr); }
+}
+
+
+@mixin responsive-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    @include respond-down("lg") { grid-template-columns: repeat(2, 1fr); }
+    @include respond-down("md") { grid-template-columns: repeat(1, 1fr); }
+}
+
+
+@mixin responsive-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+    @include respond-down("sm") { grid-template-columns: repeat(1, 1fr); }
+}
+
+// ── Form Elements ────────────────────────────────────────────
+
+
+@mixin form-field-base {
+    border-radius: $radius-sm;
+    border: 1px solid $color-border;
+    padding-inline: $input-padding-inline;
+    padding-block: $input-padding-block;
+    font-family: inherit;
+    transition: $transition-base;
+
+    &:focus {
+        border-color: $color-gray-dark;
+        outline: 1px solid $color-gray-dark;
+    }
+}
+
+// ── Buttons ──────────────────────────────────────────────────
+
+
+@mixin btn-base {
+    cursor: pointer;
+    border-radius: $radius-sm;
+    font-family: inherit;
+    font-weight: $font-weight-medium;
+    outline: none;
+    padding-inline: $button-padding-inline;
+    padding-block: $button-padding-block;
+    transition: $transition-base;
+}
+
+// ── Description Block ────────────────────────────────────────
+
+@mixin description-block($gap: 2rem, $bottom-margin: 4rem) {
+    @include flex-column-center($gap);
+    flex-shrink: 0;
+    margin-bottom: $bottom-margin;
+
+    p {
+        @include body-text;
+    }
+}
+
+// ── Embla Carousel Base ──────────────────────────────────────
+
+@mixin embla-base {
+    overflow: hidden;
+
+    &Container {
+        display: flex;
     }
 
-    @else {
-        @media (max-width: $size) {
-            @content;
-        }
+    &Slide {
+        flex: 0 0 100%;
+        min-width: 0;
+        position: relative;
     }
+}
+
+// ── Nav Button (Slider) ──────────────────────────────────────
+
+@mixin slider-nav-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    color: $color-white;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    transition: $transition-base;
+
+    &:hover { background: rgba(0, 0, 0, 0.7); }
 }

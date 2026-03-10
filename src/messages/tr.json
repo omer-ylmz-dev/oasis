@@ -70,6 +70,17 @@
     "Footer": {
       "developedBy": "{name} tarafından geliştirildi",
       "copyright": "© {year} {brand} - Tüm Hakları Saklıdır"
+    },
+    "NotFound": {
+      "title": "404",
+      "description": "Sayfa Bulunamadı",
+      "linkText": "Ana Sayfaya Dön"
+    },
+    "Error": {
+      "title": "Bir Hata Oluştu",
+      "description": "Üzgünüz, bir şeyler ters gitti.",
+      "retryText": "Tekrar Dene",
+      "linkText": "Ana Sayfaya Dön"
     }
   }
 }

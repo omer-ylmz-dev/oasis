@@ -1,5 +1,5 @@
 import { ProjectAPI } from '@/features/projects/api/projectApi'
-import ProjectsPage from '@/features/projects/ProjectsPage'
+import ProjectsPage from '@/features/projects/components/ProjectsPage'
 import JsonLd from '@/shared/components/layout/JsonLD';
 import { sanitizeFilters } from '@/shared/utils/filter';
 import { getPageMetadata } from '@/shared/utils/metadata';

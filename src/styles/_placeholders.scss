@@ -1,0 +1,95 @@
+@use "@/styles/_variables" as *;
+@use "@/styles/_mixins" as *;
+
+// ── Section Container ────────────────────────────────────────
+
+%section-default {
+    @include section-spacing;
+}
+
+%section-sm {
+    @include section-spacing(sm);
+}
+
+// ── Description Block ────────────────────────────────────────
+
+%description-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
+    flex-shrink: 0;
+    margin-bottom: 4rem;
+
+    p {
+        @include body-text;
+    }
+}
+
+// ── Image Container (aspect 1.5) ─────────────────────────────
+
+%image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1.5;
+    flex-shrink: 0;
+    border-radius: $radius-card;
+    overflow: hidden;
+}
+
+// ── Card Overlay ─────────────────────────────────────────────
+
+%card-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: $overlay-dark;
+    z-index: $z-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 16px;
+}
+
+// ── Status Label ─────────────────────────────────────────────
+
+%status-label {
+    background-color: #2C2C2C;
+    border-radius: $radius-sm;
+    color: $color-white;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-regular;
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+}
+
+// ── Card Base (link card) ────────────────────────────────────
+
+%card-link-base {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    text-decoration: none;
+    color: $color-black;
+}
+
+// ── Section Box (bordered, rounded) ─────────────────────────
+
+%section-box {
+    border: none;
+    box-shadow: $shadow-card;
+    border-radius: $radius-md;
+}
+
+// ── Page Error/NotFound shared layout ───────────────────────
+
+%fullpage-center {
+    padding-block: 10rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

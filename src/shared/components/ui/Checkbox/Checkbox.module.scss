@@ -1,4 +1,7 @@
 @use "@/styles/_mixins" as *;
+@use "@/styles/_variables" as *;
+
+
 
 .checkboxWrapper {
     display: inline-flex;
@@ -12,14 +15,12 @@
         width: 18px;
         height: 18px;
         cursor: pointer;
-        accent-color: #000;
+        accent-color: $color-black;
     }
 
-    span{
-        font-size: 0.8rem;
+    span {
+        font-size: $font-size-sm;
 
-        @include respond-down("md") {
-            font-size: 0.7rem;
-        }
+        @include respond-down("md") { font-size: $font-size-xs; }
     }
 }

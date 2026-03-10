@@ -1,4 +1,7 @@
 @use "@/styles/_mixins" as *;
+@use "@/styles/_variables" as *;
+
+
 
 .projectOverview {
     display: grid;
@@ -11,9 +14,7 @@
         align-items: center;
         column-gap: 0.7rem;
 
-        @include respond-down("sm") {
-            column-gap: 2rem;
-        }
+        @include respond-down("sm") { column-gap: 2rem; }
 
         .icon {
             display: inline-flex;
@@ -21,53 +22,24 @@
             align-items: center;
             width: 3rem;
             height: 3rem;
-            border-radius: 100%;
-            background-color: black;
+            border-radius: $radius-full;
+            background-color: $color-black;
 
-            @include respond-down("sm") {
-                width: 4rem;
-                height: 4rem;
-            }
+            @include respond-down("sm") { width: 4rem; height: 4rem; }
         }
 
         .description {
-            h5 {
-                font-weight: 600;
-            }
-
-            p {
-                font-weight: 300;
-                font-size: 0.8rem;
-            }
+            h5 { font-weight: $font-weight-semibold; }
+            p  { font-weight: $font-weight-light; font-size: $font-size-sm; }
 
             @include respond-down("sm") {
-                h5 {
-                    font-size: 0.9rem;
-                }
-
-                p {
-
-                    font-size: 0.9rem;
-                }
+                h5, p { font-size: $font-size-base; }
             }
         }
-
-
     }
 
-    @include respond-down("xl") {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    @include respond-down("lg") {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    @include respond-down("md") {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include respond-down("sm") {
-        grid-template-columns: repeat(1, 1fr);
-    }
+    @include respond-down("xl") { grid-template-columns: repeat(4, 1fr); }
+    @include respond-down("lg") { grid-template-columns: repeat(3, 1fr); }
+    @include respond-down("md") { grid-template-columns: repeat(2, 1fr); }
+    @include respond-down("sm") { grid-template-columns: repeat(1, 1fr); }
 }

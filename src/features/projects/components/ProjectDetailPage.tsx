@@ -4,13 +4,13 @@ import { getDynamicPageHeroData } from "@/lib/breadcrumb-helper";
 import { useBreadcrumb } from "@/shared/hooks/useBreadcrumb";
 import { useLocale } from "next-intl"
 import { useMemo } from "react";
-import ProjectOverview from "./components/ProjectOverview";
+import ProjectOverview from "./ProjectOverview";
 import TextSection from "@/shared/components/common/TextSection";
 import FeatureSection from "@/shared/components/common/FeatureSection";
 import InfoSection from "@/shared/components/common/InfoSection";
-import ImageViewer from "./components/ImageViewer";
-import LocationSection from "./components/LocationSection";
-import { ProjectDetailData } from "./types/project.types";
+import ImageViewer from "./ImageViewer";
+import LocationSection from "./LocationSection";
+import { ProjectDetailData } from "../types/project.types";
 
 
 

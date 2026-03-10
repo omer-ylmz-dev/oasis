@@ -25,7 +25,7 @@ export default function NavLinks({ variant, onLinkClick }: NavLinksProps) {
           initial="initial"
           animate="animate"
         >
-          <Link href={`/${link.href}`} onClick={() => onLinkClick?.()}>
+          <Link href={`/${link.href}`} onClick={() => onLinkClick?.()} scroll={false}>
             {link.label[locale as keyof typeof link.label]}
           </Link>
         </motion.li>

@@ -2,10 +2,11 @@
 
 import styles from "./ExpertSection.module.scss"
 import ExpertCard from './ExpertCard';
-import { ExpertSectionData } from "@/config/about.config";
+import { ExpertSectionData } from "@/features/about/types";
 import { useLocale } from "next-intl";
 import { motion } from "framer-motion";
 import { descriptionVariants, viewportConfig } from "./ExpertSection.animation";
+
 
 interface ExpertSectionProps {
     experts: ExpertSectionData;

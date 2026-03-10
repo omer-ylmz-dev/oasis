@@ -70,6 +70,17 @@
     "Footer": {
       "developedBy": "{name} tərəfindən hazırlandı",
       "copyright": "© {year} {brand} - Bütün hüquqlar qorunur"
+    },
+    "NotFound": {
+      "title": "404",
+      "description": "Səhifə tapılmadı",
+      "linkText": "Ana səhifəyə qayıt"
+    },
+    "Error": {
+      "title": "Xəta baş verdi",
+      "description": "Üzr istəyirik, nəsə düzgün getmədi.",
+      "retryText": "Yenidən cəhd et",
+      "linkText": "Ana səhifəyə qayıt"
     }
   }
 }

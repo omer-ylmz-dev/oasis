@@ -1,0 +1,18 @@
+@use "@/styles/_mixins" as *;
+@use "@/styles/_variables" as *;
+@use "@/styles/_placeholders" as *;
+
+
+.pageLoader {
+  position: fixed;
+  inset: 0;
+  z-index: $z-nav;
+  background-color: $color-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .spinner { animation: spin 0.8s linear infinite; }
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }

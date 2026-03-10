@@ -31,7 +31,7 @@ const LocationSection = ({
   const [activeTab, setActiveTab] = useState<TabType>('location');
   const mapRef = useRef<HTMLIFrameElement>(null);
 
-  // Harita URL'ini güncelle
+ 
   const updateMapSrc = () => {
     if (mapRef.current) {
       const mapUrl = `https://www.google.com/maps?q=${coordinates.lat},${coordinates.lng}&hl=tr&z=15&output=embed`;
@@ -39,7 +39,7 @@ const LocationSection = ({
     }
   };
 
-  // Tab değiştiğinde haritayı güncelle
+ 
   const handleTabChange = (tab: TabType) => {
     setActiveTab(tab);
     if (tab === 'location') {

@@ -3,9 +3,10 @@
 import Image from "next/image"
 import styles from "../ExpertSection.module.scss"
 import { useLocale } from "next-intl";
-import { ExpertItem } from "@/config/about.config";
+import { ExpertItem } from "@/features/about/types";
 import { motion } from "framer-motion";
 import { getExpertCardVariants, viewportConfig } from "../ExpertSection.animation";
+
 
 interface ExpertCardProps {
   item: ExpertItem;

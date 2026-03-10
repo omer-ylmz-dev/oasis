@@ -1,5 +1,5 @@
 import { NewsAPI } from '@/features/news/api/newsApi';
-import NewsDetailPage from '@/features/news/NewsDetailPage'
+import NewsDetailPage from '@/features/news/components/NewsDetailPage'
 import { constructMetadata } from '@/shared/utils/seo';
 import { getLocale } from 'next-intl/server';
 

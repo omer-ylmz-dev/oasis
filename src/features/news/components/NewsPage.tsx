@@ -1,5 +1,5 @@
 import ListingSection from '@/shared/components/common/ListingSection'
-import { NewsResponse } from './types/news.types'
+import { NewsResponse } from '../types/news.types'
 
 
 interface Props {

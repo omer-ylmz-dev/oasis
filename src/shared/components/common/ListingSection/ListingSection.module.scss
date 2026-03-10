@@ -1,73 +1,58 @@
 @use "@/styles/_mixins" as *;
+@use "@/styles/_variables" as *;
 
 .container {
-    margin-block: 5rem;
-
-
+    @include section-spacing(sm);
 
     .header {
-
-        display: flex;
-        justify-content: space-between;
+        @include flex-between;
         margin-bottom: 5rem;
 
         .filterWrapper,
-        .sorterWrapper {
-            display: flex;
-            gap: 0.7rem;
-        }
+        .sorterWrapper { display: flex; gap: 0.7rem; }
 
         @include respond-down("lg") {
-
             flex-direction: column-reverse;
             row-gap: 1rem;
-
-
         }
 
-
         @include respond-down("sm") {
-
-            border: 1px solid lightgray;
-            border-radius: 1rem;
+            border: 1px solid $color-border-light;
+            border-radius: $radius-md;
             padding: 1.2rem;
 
             .filterWrapper,
-            .sorterWrapper {
-                flex-direction: column;
-            }
+            .sorterWrapper { flex-direction: column; }
 
-            .sorterWrapper {
-                margin-bottom: 2rem;
-            }
-
+            .sorterWrapper { margin-bottom: 2rem; }
         }
-
-
-
-
     }
 
-
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-
-        @include respond-down("lg") {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        @include respond-down("sm") {
-            grid-template-columns: repeat(1, 1fr);
-        }
-
-    }
+    .grid { @include responsive-grid-3; }
 }
 
 
 
 
+
+
+
+
+
+
+%page-btn-base {
+    cursor: pointer;
+    border: 1px solid $color-border-light;
+    border-radius: $radius-sm;
+    background: transparent;
+    transition: $transition-base;
+
+    &:hover {
+        background-color: $color-black;
+        color: $color-white;
+        border-color: $color-border-light;
+    }
+}
 
 .pagination {
     margin-block: 5rem;
@@ -82,51 +67,25 @@
     }
 
     .pageNumber {
-        cursor: pointer;
+        @extend %page-btn-base;
         padding: 1rem;
-        border: 1px solid lightgray;
-        border-radius: 0.5rem;
-        background: transparent;
-        transition: all 0.3s ease; 
-
-        &:hover {
-            background-color: black;
-            color: white;
-            border: 1px solid lightgray;
-        }
     }
 
     .active {
         border: none;
-        background: black;
-        color: white;
+        background: $color-black;
+        color: $color-white;
     }
 
     .pageDirection {
-        cursor: pointer;
+        @extend %page-btn-base;
         display: flex;
         align-items: center;
         padding: 0.8rem;
-        border: 1px solid lightgray;
-        border-radius: 0.5rem;
-        background: transparent;
-        transition: all 0.3s ease; 
-
-        &:hover {
-            background-color: black;
-            color: white;
-            border: 1px solid lightgray;
-        }
     }
 
-
-    @include respond-down("sm"){
-        .pageNumber{
-            padding: 0.6rem;
-        }
-        .pageDirection{
-            padding: 0.2rem;
-        }
+    @include respond-down("sm") {
+        .pageNumber   { padding: 0.6rem; }
+        .pageDirection { padding: 0.2rem; }
     }
-
 }

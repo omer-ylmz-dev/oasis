@@ -44,7 +44,7 @@ export default function Footer() {
               whileInView="whileInView"
               viewport={footerViewportConfig}
               >
-                <Link href={`/${link.href}`}>
+                <Link href={`/${link.href}`} scroll={false}>
                   {link.label[locale as keyof typeof link.label]}
                 </Link>
               </motion.li>
@@ -72,7 +72,7 @@ export default function Footer() {
             whileInView="whileInView"
             viewport={footerViewportConfig}
           >
-            <Link href={SITE_CONFIG.developer.link}>
+            <Link href={SITE_CONFIG.developer.link} scroll={false}>
               {t('developedBy', {
                 name: SITE_CONFIG.developer.name
               })}
@@ -94,6 +94,7 @@ export default function Footer() {
                   href={link.href}
                   aria-label={`Social link ${index + 1}`}
                   className="hover:opacity-70 transition-opacity"
+                  scroll={false}
                 >
                   <Icon />
                 </Link>

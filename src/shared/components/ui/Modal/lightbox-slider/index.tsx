@@ -3,11 +3,9 @@
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect } from "react";
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight, MdClose } from "react-icons/md";
-import { useModalStore, ModalState } from "@/store/useModalStore";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import styles from "./LightboxSlider.module.scss";
-import Button from "../../Button";
-import { IoMdClose } from "react-icons/io";
+
 
 interface LightboxSliderProps {
     images: string[];
@@ -26,7 +24,7 @@ export default function LightboxSlider({ images, startIndex = 0 }: LightboxSlide
     const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
     const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
-    // Arrow key navigation — ESC zaten ModalManager'da handle ediliyor
+
     useEffect(() => {
         const handleKey = (e: KeyboardEvent) => {
             if (e.key === "ArrowLeft") emblaApi?.scrollPrev();
@@ -36,6 +34,7 @@ export default function LightboxSlider({ images, startIndex = 0 }: LightboxSlide
         return () => window.removeEventListener("keydown", handleKey);
     }, [emblaApi]);
 
+    
     return (
         <div className={styles.lightbox}>
             <div className={styles.sliderWrapper}>

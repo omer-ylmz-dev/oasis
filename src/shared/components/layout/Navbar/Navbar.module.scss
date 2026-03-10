@@ -1,4 +1,7 @@
 @use "@/styles/_mixins" as *;
+@use "@/styles/_variables" as *;
+
+
 
 
 .languageSwitcher {
@@ -17,63 +20,46 @@
         min-width: 30px;
         padding: 0 0.5rem;
 
-        @include respond-down("sm") {
-            font-size: 0.8rem;
-        }
-
-    }
-
-
-    select:focus {
-        outline: none;
+        @include respond-down("sm") { font-size: 0.8rem; }
+        &:focus { outline: none; }
     }
 }
+
+
+
 
 
 
 .navbar {
     position: fixed;
-    z-index: 9999;
+    z-index: $z-nav;
     top: 2rem;
     left: 2rem;
     right: 2rem;
-    background-color: white;
+    background-color: $color-white;
     min-height: 4rem;
     display: flex;
     justify-content: center;
     padding-inline: 1rem;
-    border-radius: 1rem;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-radius: $radius-md;
+    box-shadow: $shadow-navbar;
 
     .container {
-
         width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flex-between;
 
         a {
             text-decoration: none;
-            color: black;
-
-            h1 {
-
-                font-weight: 200;
-            }
+            color: $color-black;
+            h1 { font-weight: $font-weight-light; }
         }
 
         .mobileMenuBtnWrapper {
             display: none;
-
-            @include respond-down("lg") {
-                display: flex; 
-            }
+            @include respond-down("lg") { display: flex; }
         }
-
     }
 }
-
-
 
 
 
@@ -85,19 +71,18 @@
     justify-content: space-between;
     list-style-type: none;
 
-    @include respond-down("lg") {
-        display: none;
-    }
+    @include respond-down("lg") { display: none; }
 
     li a {
         text-decoration: none;
-        color: black;
-
-        &:hover {
-            opacity: 0.7;
-        }
+        color: $color-black;
+        &:hover { opacity: 0.7; }
     }
 }
+
+
+
+
 
 .navLinks-mobile {
     display: flex;
@@ -108,27 +93,20 @@
 
     li a {
         text-decoration: none;
-        color: black;
-        font-size: 1rem;
-        font-weight: 500;
+        color: $color-black;
+        font-size: $font-size-md;
+        font-weight: $font-weight-medium;
     }
 }
 
 
 
 
-
-
-.mobileMenu{
+.mobileMenu {
     display: flex;
     flex-direction: column;
     row-gap: 2rem;
-    padding: 2rem 2rem;
-    
-    .header{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        
-    }
+    padding: 2rem;
+
+    .header { @include flex-between; }
 }

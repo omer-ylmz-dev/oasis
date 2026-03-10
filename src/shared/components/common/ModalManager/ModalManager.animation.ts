@@ -1,6 +1,6 @@
 import { Transition, Variants } from 'framer-motion';
 
-// Arka plan karartması (Overlay) için
+
 export const overlayVariants: Variants = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
@@ -12,7 +12,7 @@ export const overlayTransition: Transition = {
   ease: "easeInOut"
 };
 
-// Mobil Menü (Drawer) için soldan giriş
+
 export const drawerVariants: Variants = {
   initial: { x: "-100%" },
   animate: { x: 0 },
@@ -21,5 +21,5 @@ export const drawerVariants: Variants = {
 
 export const drawerTransition: Transition = {
   duration: 0.7,
-  ease: [0.16, 1, 0.3, 1] // Custom Expo Out ease
+  ease: [0.16, 1, 0.3, 1]
 };

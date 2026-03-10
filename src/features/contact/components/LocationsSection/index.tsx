@@ -15,11 +15,6 @@ export default function LocationsSection(props: LocationsSectionProps) {
             ? t("Showrooms.heading")
             : t("Offices.heading");
 
-    /* const description =
-        props.type === "showroom"
-            ? t("Showrooms.summary")
-            : t("Offices.summary"); */
-
 
 
 
@@ -28,7 +23,6 @@ export default function LocationsSection(props: LocationsSectionProps) {
             {(title) && (
                 <div className={styles.description}>
                     {title && <h1>{title}</h1>}
-                    {/* {description && <p>{description}</p>} */}
                 </div>
             )}
 

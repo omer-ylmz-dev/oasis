@@ -1,10 +1,14 @@
 @use "@/styles/_mixins" as *;
+@use "@/styles/_variables" as *;
+@use "@/styles/_placeholders" as *;
+
+
 
 .overlay {
     position: fixed;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.7);
-    z-index: 9999;
+    z-index: $z-nav;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,41 +24,25 @@
     justify-content: center;
     width: 40px;
     height: 40px;
-    border-radius: 50%;
+    border-radius: $radius-full;
     border: 1px solid rgba(255, 255, 255, 0.25);
     background: rgba(255, 255, 255, 0.12);
-    color: #fff;
+    color: $color-white;
     cursor: pointer;
-    transition: background 0.2s ease, transform 0.2s ease;
+    transition: $transition-fast;
 
-    &:hover {
-        background: rgba(255, 255, 255, 0.28);
-        transform: scale(1.1);
-    }
+    &:hover { background: rgba(255, 255, 255, 0.28); transform: scale(1.1); }
 }
 
-.modalContent {
-    background: #fff;
-    position: relative;
-    border-radius: 1rem;
-}
-
-
-.lightboxContent {
-    position: relative;
-    background: transparent;
-}
+.modalContent  { background: $color-white; position: relative; border-radius: $radius-md; }
+.lightboxContent { position: relative; background: transparent; }
 
 .drawer {
     position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
+    left: 0; top: 0; bottom: 0;
     width: 100%;
     max-width: 400px;
-    background: #fff;
+    background: $color-white;
 
-    @include respond-down("sm") {
-        max-width: none;
-    }
+    @include respond-down("sm") { max-width: none; }
 }

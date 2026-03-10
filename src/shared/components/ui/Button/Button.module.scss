@@ -1,66 +1,55 @@
-@use "@/styles/_mixins" as *;
+@use "@/styles/mixins" as *;
+@use "@/styles/variables" as *;
 
 .primary {
-    cursor: pointer;
-    background-color: black;
-    border-radius: 0.5rem;
-    color: white;
-    font-weight: 100;
-    border: 1px solid black; 
-    outline: none;
-    padding-inline: 1.4rem;
-    padding-block: 0.5rem;
-    transition: all 0.3s ease; 
+    @include btn-base;
+    background-color: $color-black;
+    color: $color-white;
+    border: 1px solid $color-black;
 
     &:hover {
-        background-color: lightgray;
-        color: black;
-        border: 1px solid lightgray;
+        background-color: $color-gray-light;
+        color: $color-black;
+        border-color: $color-gray-light;
     }
 }
 
 .outline {
-    cursor: pointer;
+    @include btn-base;
     background-color: transparent;
-    border-radius: 0.5rem;
-    color: black;
-    border: 1px solid lightgray;
-    outline: none;
-    padding-inline: 1.4rem;
-    padding-block: 0.5rem;
-    transition: all 0.3s ease; 
+    color: $color-black;
+    border: 1px solid $color-gray-light;
 
     &:hover {
-        background-color: black;
-        color: white;
-        border: 1px solid black;
+        background-color: $color-black;
+        color: $color-white;
+        border-color: $color-black;
     }
 }
 
-.ghost{
+.ghost {
     background-color: transparent;
-    color: black;
+    font-family: inherit;
+    color: $color-black;
     border: none;
     outline: none;
     padding-inline: 1rem;
-    padding-block: 0.5rem;
+    padding-block: $button-padding-block;
 }
 
-
-.link{
+.link {
     width: fit-content;
     background: transparent;
+    font-family: inherit;
     cursor: pointer;
     border: none;
     outline: none;
-    color: white;
-    font-weight: 200;
+    color: $color-white;
+    font-weight: $font-weight-light;
 }
 
-
-
 @include respond-down("sm") {
-    .primary, .outline{
+    .primary, .outline {
         white-space: nowrap;
         padding-inline: 0.7rem;
         font-size: 12px;

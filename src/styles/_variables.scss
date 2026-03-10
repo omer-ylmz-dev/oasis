@@ -1,0 +1,79 @@
+// ── Colors ───────────────────────────────────────────────────
+
+$color-black:        #000000;
+$color-white:        #ffffff;
+$color-gray-light:   lightgray;       // #d3d3d3
+$color-gray-mid:     #D9D9D9;
+$color-gray-dark:    #696969;
+$color-gray-muted:   #9a9a9a;
+$color-ghost-white:  ghostwhite;
+$color-bg-dark:      #111;
+$color-text-primary: #1a1a1a;
+$color-text-secondary: #2a2a2a;
+$color-text-muted:   #666;
+$color-border:       $color-gray-mid;
+$color-border-light: $color-gray-light;
+
+// ── Spacing — Section Margins ────────────────────────────────
+
+$section-margin:       10rem;
+$section-margin-md:    6rem;
+$section-margin-sm:    4rem;
+
+// ── Border Radius ────────────────────────────────────────────
+
+$radius-sm:   0.5rem;
+$radius-md:   1rem;
+$radius-lg:   1.5rem;
+$radius-card: 12px;
+$radius-full: 50%;
+
+// ── Typography ───────────────────────────────────────────────
+
+$font-size-xs:   0.7rem;
+$font-size-sm:   0.8rem;
+$font-size-base: 0.9rem;
+$font-size-md:   1rem;
+$font-size-lg:   1.2rem;
+$font-size-xl:   1.5rem;
+$font-size-2xl:  2rem;
+$font-size-3xl:  2.5rem;
+
+$font-weight-light:   200;
+$font-weight-regular: 400;
+$font-weight-medium:  500;
+$font-weight-semibold:600;
+$font-weight-bold:    700;
+
+$line-height-body: 1.6;
+
+// ── Transitions ──────────────────────────────────────────────
+
+$transition-base: all 0.3s ease;
+$transition-fast: all 0.2s ease;
+
+// ── Overlays ─────────────────────────────────────────────────
+
+$overlay-dark:    rgba(0, 0, 0, 0.5);
+$overlay-darker:  rgba(0, 0, 0, 0.6);
+$overlay-hero:    rgba(0, 0, 0, 0.6);
+$overlay-gallery: rgba(0, 0, 0, 0.2);
+
+// ── Shadows ──────────────────────────────────────────────────
+
+$shadow-card:   0 10px 30px rgba(0, 0, 0, 0.05);
+$shadow-navbar: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+// ── Z-index ──────────────────────────────────────────────────
+
+$z-overlay: 1;
+$z-content: 2;
+$z-nav:     9999;
+
+// ── Form Elements ────────────────────────────────────────────
+
+$input-padding-inline:  1rem;
+$input-padding-block:   0.5rem;
+$input-min-width:       15rem;
+$button-padding-inline: 1.4rem;
+$button-padding-block:  0.5rem;

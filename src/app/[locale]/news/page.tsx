@@ -1,5 +1,5 @@
 import { NewsAPI } from '@/features/news/api/newsApi';
-import NewsPage from '@/features/news/NewsPage'
+import NewsPage from '@/features/news/components/NewsPage'
 import JsonLd from '@/shared/components/layout/JsonLD';
 import { sanitizeFilters } from '@/shared/utils/filter';
 import { getPageMetadata } from '@/shared/utils/metadata';

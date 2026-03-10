@@ -5,7 +5,7 @@ export const textViewportConfig = {
   amount: 0.3
 };
 
-// Başlık ve temel metin bloğu için
+
 export const textFadeUpVariants: Variants = {
   initial: { opacity: 0, y: 40 },
   whileInView: { 
@@ -15,7 +15,7 @@ export const textFadeUpVariants: Variants = {
   }
 };
 
-// Paragraflar veya ardışık öğeler için dinamik delay varyantı
+
 export const getStaggeredTextVariants = (index: number): Variants => ({
   initial: { opacity: 0, y: 40 },
   whileInView: { 
@@ -29,7 +29,7 @@ export const getStaggeredTextVariants = (index: number): Variants => ({
   }
 });
 
-// Alıntı (Quote) yazarı için özel delay
+
 export const quoteAuthorVariants: Variants = {
   initial: { opacity: 0, y: 40 },
   whileInView: { 

@@ -1,60 +1,23 @@
 @use "@/styles/_mixins" as *;
+@use "@/styles/_variables" as *;
+@use "@/styles/_placeholders" as *;
 
 .container {
-    margin-block: 10rem;
+    @include section-spacing;
 
+    .description { @extend %description-block; }
 
-
-    .description {
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        row-gap: 2rem;
-        flex-shrink: 0;
-        margin-bottom: 4rem;
-
-        p {
-            font-size: 0.8rem;
-            line-height: 1.6;
-        }
-    }
-
-
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2rem;
-
-        @include respond-down("xl") {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        @include respond-down("lg") {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        @include respond-down("sm") {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-        }
-
-    }
+    .grid { @include responsive-grid-4; }
 }
-
-
 
 .card {
     flex: 1;
-    border-radius: 0.5rem;
+    border-radius: $radius-sm;
     padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     row-gap: 1.5rem;
-
 
     span {
         display: inline-flex;
@@ -62,34 +25,13 @@
         align-items: center;
         width: 4rem;
         height: 4rem;
-        border-radius: 100%;
+        border-radius: $radius-full;
         background-color: rgb(255, 254, 254);
     }
 
-
-    h1 {
-        font-size: 1rem;
-        text-align: center;
-    }
-
-
-    p {
-        font-size: 0.8rem;
-        font-weight: 200;
-        text-align: center;
-    }
+    h1 { font-size: $font-size-md; text-align: center; }
+    p  { font-size: $font-size-sm; font-weight: $font-weight-light; text-align: center; }
 }
 
-
-
-
-
-.home {
-    background-color: ghostwhite;
-}
-
-
-.projects {
-    background-color: transparent;
-    border: 1px solid gray;
-}
+.home     { background-color: $color-ghost-white; }
+.projects { background-color: transparent; border: 1px solid gray; }

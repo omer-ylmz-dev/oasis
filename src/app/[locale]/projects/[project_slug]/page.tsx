@@ -1,5 +1,5 @@
 import { ProjectAPI } from '@/features/projects/api/projectApi';
-import ProjectDetailPage from '@/features/projects/ProjectDetailPage'
+import ProjectDetailPage from '@/features/projects/components/ProjectDetailPage'
 import { constructMetadata } from '@/shared/utils/seo';
 import { getLocale } from 'next-intl/server';
 

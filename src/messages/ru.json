@@ -70,6 +70,17 @@
     "Footer": {
       "developedBy": "Разработано {name}",
       "copyright": "© {year} {brand} - Все права защищены"
+    },
+    "NotFound": {
+      "title": "404",
+      "description": "Страница не найдена",
+      "linkText": "На главную"
+    },
+    "Error": {
+      "title": "Произошла ошибка",
+      "description": "Извините, что-то пошло не так.",
+      "retryText": "Попробовать снова",
+      "linkText": "На главную"
     }
   }
 }

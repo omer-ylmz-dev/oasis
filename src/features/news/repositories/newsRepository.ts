@@ -67,12 +67,10 @@ export class NewsRepository {
     
 
     sort(news: News[], sortParam: string = 'publishedAt-desc'): News[] {
-        // String parçalama işlemini güvenli hale getirelim
         const [field, order] = sortParam.split('-') as [NewsSortField, SortOrder];
 
         return [...news].sort((a, b) => {
             if (field === 'title') {
-                // Title'ın string mi yoksa Record mu olduğunu kontrol etmeliyiz
                 const aTitle = typeof a.title === 'string' ? a.title : a.title.en || "";
                 const bTitle = typeof b.title === 'string' ? b.title : b.title.en || "";
 
@@ -91,7 +89,6 @@ export class NewsRepository {
                     break;
                 case 'publishedAt':
                 default:
-                    // Date objesi veya string gelebilir, getTime() ile sayıya çeviriyoruz
                     aValue = new Date(a.publishedAt).getTime();
                     bValue = new Date(b.publishedAt).getTime();
             }

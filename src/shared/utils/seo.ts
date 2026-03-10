@@ -5,11 +5,11 @@ interface MetaOptions {
   description: string;
   locale: string;
   image?: string;
-  path: string;
+  path?: string;
 }
 
 export function constructMetadata({ title, description, locale, image, path }: MetaOptions): Metadata {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ajansiniz.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ajansiniz.com'; // UYARI
   
   return {
     title,

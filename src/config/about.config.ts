@@ -1,45 +1,5 @@
-import { Languages } from "@/config/languages.config";
-
-
-// UYARI : BUNLARI TAŞI !
-
-export type ABOUT_SECTION_CONTENT = {
-  title: Record<Languages, string>;
-  content: Record<Languages, string>;
-  images: string[];
-};
-
-export type ABOUT_SECTION_QUOTE = {
-  quote: Record<Languages, string>;
-  author: Record<Languages, string>;
-  role?: Record<Languages, string>;
-};
-
-
-export interface StatItem {
-  value: string;
-  label: Record<Languages, string>;
-}
-
-
-export interface ExpertItem {
-  name: Record<Languages, string>;
-  role: Record<Languages, string>;
-  image: string; // resim yolu
-}
-
-export interface ExpertSectionData {
-  title: Record<Languages, string>;
-  description: Record<Languages, string>;
-  items: ExpertItem[];
-}
-
-
-
-
-
-
-
+import { ABOUT_SECTION_CONTENT, ABOUT_SECTION_QUOTE, ExpertSectionData } from "@/features/about/types";
+import { StatItem } from "@/shared/types/content.types";
 
 
 
@@ -62,6 +22,11 @@ export const ABOUT_CONTENT: ABOUT_SECTION_CONTENT = {
     "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1920&h=1080"
   ],
 };
+
+
+
+
+
 
 export const ABOUT_QUOTE: ABOUT_SECTION_QUOTE = {
   quote: {

@@ -1,7 +1,7 @@
-import { Languages } from "@/config/languages.config";
+import { HOME_SECTION_CONTENT, FeatureSectionData } from "@/features/home/types";
 import { InfoSectionData } from "@/shared/components/common/InfoSection/types";
-import { LocalizedString, SliderDataItem } from "@/shared/types/common.types";
-import { IconType } from "react-icons";
+import { SliderDataItem } from "@/shared/types/common.types";
+import { StatItem } from "@/shared/types/content.types";
 import { AiOutlineSafetyCertificate } from "react-icons/ai";
 import { FaHandsHelping, FaLightbulb } from "react-icons/fa";
 import { HiOutlineBadgeCheck } from "react-icons/hi";
@@ -9,27 +9,7 @@ import { MdOutlineSentimentSatisfiedAlt } from "react-icons/md";
 import { RiLeafLine } from "react-icons/ri";
 
 
-export type HOME_SECTION_CONTENT = {
-    title: Record<Languages, string>;
-    content: Record<Languages, string>;
-};
 
-export interface StatItem {
-    value: string;
-    label: Record<Languages, string>;
-}
-
-export interface FeatureItem {
-    title: LocalizedString | string;
-    description: LocalizedString | string;
-    icon?: IconType;
-  }
-
-export interface FeatureSectionData {
-    title?: LocalizedString | string;
-    description?: LocalizedString | string;
-    items: FeatureItem[];
-  }
 
 
 

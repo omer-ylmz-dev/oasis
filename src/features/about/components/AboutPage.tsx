@@ -3,7 +3,7 @@
 import { ABOUT_CONTENT, ABOUT_QUOTE, ABOUT_STATS, EXPERT_SECTION } from '@/config/about.config'
 import TextSection from '@/shared/components/common/TextSection'
 import { useLocale } from 'next-intl';
-import ExpertSection from './components/ExpertSection';
+import ExpertSection from '../components/ExpertSection';
 import StatsSection from '@/shared/components/common/StatsSection';
 import Slider from '@/shared/components/ui/Slider';
 

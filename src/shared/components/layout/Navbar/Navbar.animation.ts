@@ -1,5 +1,8 @@
 import { Variants } from 'framer-motion';
 
+
+
+
 export const navVariants: Variants = {
   initial: { y: -20, opacity: 0 },
   animate: { 
@@ -9,6 +12,8 @@ export const navVariants: Variants = {
   }
 };
 
+
+
 export const logoVariants: Variants = {
   initial: { opacity: 0 },
   animate: { 
@@ -16,6 +21,8 @@ export const logoVariants: Variants = {
     transition: { duration: 0.5, delay: 0.2 } 
   }
 };
+
+
 
 export const languageSwitcherVariants: Variants = {
   initial: { opacity: 0 },
@@ -25,7 +32,9 @@ export const languageSwitcherVariants: Variants = {
   }
 };
 
-// NavLinks için Staggered (Sıralı) Animasyon
+
+
+
 export const getNavLinkVariants = (variant: 'desktop' | 'mobile', index: number): Variants => {
   const isDesktop = variant === 'desktop';
   
@@ -44,6 +53,9 @@ export const getNavLinkVariants = (variant: 'desktop' | 'mobile', index: number)
   };
 };
 
+
+
+
 export const mobileMenuVariants: Variants = {
   initial: { x: "-100%", opacity: 0 },
   animate: { 
@@ -57,6 +69,11 @@ export const mobileMenuVariants: Variants = {
     transition: { duration: 0.5, ease: "easeInOut" } 
   }
 };
+
+
+
+
+
 
 export const mobileMenuHeaderVariants: Variants = {
   initial: { opacity: 0, x: -20 },

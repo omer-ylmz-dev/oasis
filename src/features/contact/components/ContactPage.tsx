@@ -1,10 +1,11 @@
 "use client"
 
 import { OFFICES, SHOWROOMS } from "@/config/contact.config";
-import LocationsSection from "./components/LocationsSection";
-import ContactForm from "./components/ContactForm";
+import ContactForm from "./ContactForm";
+import LocationsSection from "./LocationsSection";
 import { useRef } from "react";
 import MapSection from "@/shared/components/common/MapSection";
+
 
 
 export default function ContactPage() {

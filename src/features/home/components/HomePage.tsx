@@ -21,7 +21,6 @@ export default function HomePage() {
       {FEATURE_INFO_SECTION.items.map((item, index) => (
         <InfoSection key={index} item={item} />
       ))}
-      {/* <FeatureSection features={FEATURE_SECTION} variant="home" /> */}
       <FeatureSection
         variant="home"
         features={FEATURE_SECTION}

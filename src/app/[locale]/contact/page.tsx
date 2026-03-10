@@ -1,4 +1,4 @@
-import ContactPage from '@/features/contact/ContactPage'
+import ContactPage from '@/features/contact/components/ContactPage'
 import JsonLd from '@/shared/components/layout/JsonLD';
 import { getPageMetadata } from '@/shared/utils/metadata';
 import { createOrganizationSchema } from '@/shared/utils/schema';

@@ -1,5 +1,5 @@
 import ListingSection from '@/shared/components/common/ListingSection'
-import { ProjectResponse } from './types/project.types'
+import { ProjectResponse } from '../types/project.types'
 
 
 export default function ProjectsPage({ projects }: { projects: ProjectResponse }) {
