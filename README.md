@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# OASIS | Modern Construction & Real Estate Showcase
 
-## Getting Started
+**OASIS** is a fictional construction and real estate company. This project is its high-performance and scalable corporate portfolio application. Developed with modern web standards like Next.js 16 and React 19, it aims to elevate the company's digital presence. To reach an international audience, the application provides full support for **4 languages**: Turkish, Azerbaijani, English, and Russian.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Architecture & Technical Decisions
+
+This project is not just a UI exercise. It is built on an engineering strategy:
+
+### 1. Data-Driven & Static-First Approach
+
+The project follows the Data-Driven UI principle for content management. All projects, services, and news are managed from a central data layer.
+
+> **Why?** To keep database costs low, maximize SEO scores, and achieve very fast page load times (TTFB).
+
+### 2. Hybrid Rendering Strategy
+
+The application combines different rendering methods depending on the type of content:
+
+- **SSR (Server-Side Rendering):** Used for project listings, filtering functions, and dynamic slug pages — for SEO and up-to-date content.
+- **Static Rendering:** Used for fixed pages like About, Contact, and Home — for zero runtime overhead.
+
+### 3. Feature-Based Folder Structure
+
+The codebase is organized with a Feature-based architecture to prevent complexity and make maintenance easier. Each feature (`projects`, `news`, `contact`, etc.) keeps its own components, hooks, and services inside its own folder.
+
+### 4. CMS-Ready Architecture
+
+The data layer is completely separated from the UI. The current structure is designed to support a future Headless CMS integration (Strapi, Contentful, etc.) without requiring major changes to the codebase.
+
+### 5. Type-Safe Development with TypeScript
+
+The entire codebase is built with TypeScript to ensure reliability and maintainability. By providing static type safety across the application, TypeScript helps catch potential errors early in the development process and makes the code easier to understand. This approach, combined with a structured architecture, ensures that the project remains robust, organized, and easy to scale as new features are added.
+
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| **Language** | TypeScript — Static type safety across the entire codebase |
+| **Framework** | Next.js 16 (App Router) |
+| **Library** | React 19 |
+| **Styling** | SCSS (Sass) — Modular and scalable CSS management |
+| **State Management** | Zustand — Lightweight and effective state management |
+| **Animations** | Framer Motion — Smooth and interactive user experience |
+| **Carousel** | Embla Carousel — Optimized touch-friendly sliders |
+| **Localization** | next-intl — 4-language support infrastructure (TR, AZ, EN, RU) |
+| **Optimization** | Babel React Compiler — Performance-focused automatic memoization |
+
+---
+
+## 🌐 Localization
+
+The application has a full multilingual structure built on the `next-intl` library:
+
+| Language | Code |
+|---|---|
+| Turkish | `tr` |
+| Azerbaijani | `az` |
+| English | `en` |
+| Russian | `ru` |
+
+All translation files are managed as JSON files inside the `src/messages/` folder. The language routing logic is configured centrally under `src/i18n/`.
+
+---
+
+## 🎨 UI Architecture
+
+- **Responsive Design:** Built with a mobile-first approach, fully compatible with all screen sizes.
+- **Reusable Components:** Every component is designed as generic and reusable across different pages and contexts.
+- **Modular SCSS:** Each component is isolated with its own `.module.scss` file — no global style leakage.
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+├── app/              # Next.js App Router (Pages & API Routes)
+├── config/           # Site-wide configuration files (SEO, navigation, etc.)
+├── constants/        # Static data (routes, socials)
+├── data/             # Local static data files (projects, news)
+├── features/         # Feature-based modules (projects, news, contact, etc.)
+│                     #   Each module contains its own components/, services/, types/
+├── shared/           # Shared UI components, hooks, types & utils
+├── i18n/             # Localization routing & request config
+├── lib/              # Utility helpers & API response handlers
+├── messages/         # Translation files (az, en, ru, tr)
+├── store/            # Zustand state definitions
+└── styles/           # Global styles & Sass variables
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⚙️ Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To run the project in your local environment:
 
-## Learn More
+**Install dependencies:**
+```bash
+npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+**Start the development server:**
+```bash
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Build and optimize:**
+```bash
+npm run build
+npm run start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 💡 Developer Note
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This application is a fictional brand project with no real commercial activity. However, the architecture used is designed to be scalable enough to handle real-world scenarios with thousands of projects and high-traffic corporate needs.
